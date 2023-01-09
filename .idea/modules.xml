@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Ejemplos/Abstractos/Abstractos.iml" filepath="$PROJECT_DIR$/Ejemplos/Abstractos/Abstractos.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ejemplos/Ejemplos.iml" filepath="$PROJECT_DIR$/Ejemplos/Ejemplos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjerciciosClase/EjerciciosClase.iml" filepath="$PROJECT_DIR$/EjerciciosClase/EjerciciosClase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjerciciosClase/Interfaces/Interfaces.iml" filepath="$PROJECT_DIR$/EjerciciosClase/Interfaces/Interfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/Programacion-Java.iml" filepath="$PROJECT_DIR$/Programacion-Java.iml" />
     </modules>
   </component>
