@@ -1,3 +1,5 @@
+package org.ieslosremedios.daw.ud3.ejemplos.Abstractos;
+
 public class MainAnimal {
     public static void main(String[]args){
         Animal a = new Perro();

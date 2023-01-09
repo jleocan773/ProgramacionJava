@@ -1,13 +1,15 @@
-public class Humano extends Animal{
-    final static Integer numPatas = 2;
+package org.ieslosremedios.daw.ud3.ejemplos.Abstractos;
+
+public class Perro extends Animal {
+    final static Integer numPatas = 4;
     final static Boolean mamifero = true;
     final static Boolean volador = false;
-    final static String sonido = "Hola buenas tardes";
+    final static String sonido = "Woof woof";
 
     @Override
     Integer getNumPatas() {return numPatas;}
     @Override
-    Boolean esMamifero() { return mamifero;}
+    Boolean esMamifero(){return mamifero;}
     @Override
     Boolean esVolador() {return volador;}
     @Override
