@@ -15,7 +15,7 @@ public class TestImpresiones {
 
 
         Imprimible Impresora1 = new Impresora()  9.- En el método main, en lugar de crear objetos de tipo Impresora y Consola, créalos todos de tipo Imprimible
-        Imprimible Consola1 = new Consola();  9.- En el método main, en lugar de crear objetos de tipo Impresora y Consola, créalos todos de tipo Imprimible
+        Imprimible Consola1 = new Consola()  9.- En el método main, en lugar de crear objetos de tipo Impresora y Consola, créalos todos de tipo Imprimible
 
         No, no sigue funcionando igual, el método "Borrado" no es accesible por parte de "Imprimible", por lo que tanto Impresora1 como Consola1 no tendrían acceso
             a ese método, podríamos solucionar esto si "Imprimible" heredase de "Borrable" */

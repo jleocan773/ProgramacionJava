@@ -6,7 +6,7 @@ public class Consola implements Imprimible, Borrable{ //4.- Creamos una nueva cl
     public void Imprime(){                             //4.- Pero ahora el método imprime de esta nueva clase imprimirá el contenido de un campo llamado pantalla
         System.out.printf("%S", pantalla + "\n");    } // utilizando la impresión con formato (printf) para formatear el texto de modo que salga en mayúsculas
 
-    public void establecerContenido(String contenido){ //5.- Y en el caso de la consola haga lo mismo pero precediéndolo del prompt
+    public void establecerContenido(String contenido){ //5.- Y en el caso de la consola, que haga lo mismo pero precediéndolo del prompt
         System.out.printf("%S", contenido + " " + pantalla);
     }
 
