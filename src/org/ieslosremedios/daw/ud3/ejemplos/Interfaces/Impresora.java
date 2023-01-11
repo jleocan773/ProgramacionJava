@@ -7,12 +7,14 @@ public class Impresora implements Imprimible, Borrable{ //3.- Creamos la clase i
         System.out.println(pagina); //3.- El método deberá imprimir un campo de la clase llamado “página” de tipo cadena.
     }
 
-    public void establecerContenido(String contenido){ //5.- En el caso de la impresora establezca el contenido indicado por parámetro
-        System.out.println(contenido);
+    public void establecerContenido(String contenido){
+        String pagina = contenido; //5.- En el caso de la impresora establezca el contenido indicado por parámetro
+        System.out.println(pagina);
     }
 
     public void Borrado() {
-        System.out.println(" "); //6.- En el caso de la impresora elimina el texto de la página (muestra vacío)
+        String pagina = " "; //6.- En el caso de la impresora elimina el texto de la página (muestra vacío)
+        System.out.println(pagina);
     }
 }
 

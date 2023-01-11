@@ -1,11 +1,11 @@
 package org.ieslosremedios.daw.ud3.ejemplos.Interfaces;
 
 /** 7.- Crea una clase “TestImpresiones” con un método main donde se imprima desde la impresora y desde consola, en orden:
-            1.- El contenido por defecto
+            Primero.- El contenido por defecto
 
-            2.- El contenido después de ser borrado
+            Segundo.- El contenido después de ser borrado
 
-            3.- El contenido después de ser establecido al valor “Esto es un test */
+            Tercero.- El contenido después de ser establecido al valor “Esto es un test */
 
 public class TestImpresiones {
     public static void main(String[]args){
@@ -31,10 +31,10 @@ public class TestImpresiones {
         System.out.println("-------------------------------------");
 
         Consola Consola1 = new Consola();
-        System.out.println("CONSOLA");
+        System.out.println("CONSOLA: ");
         Consola1.Imprime(); //El contenido por defecto
         Consola1.Borrado(); //El contenido después de ser borrado
-        Consola1.establecerContenido("Este es el contenido de la Consola1, que va antes que el prompt, aunque no sé si todo en mayúscula (?)"); //El contenido después de ser establecido a un valor
+        Consola1.establecerContenido("Este es el contenido de la Consola1, que va precedido del prompt, aunque no sé si todo en mayúscula (?)"); //El contenido después de ser establecido a un valor
 
         System.out.println("\n-------------------------------------");
 
