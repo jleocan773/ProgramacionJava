@@ -8,6 +8,6 @@ package org.ieslosremedios.daw.ud3.ejemplos.Interfaces;
  Sí, sigue funcionando igual, porque es posible que una interfaz herede de varias interfaces, al contrario que una clase, que solo puede heredar de una */
 
 public interface Editable extends Borrable, Imprimible{
-    void establecerContenido(String contenido); //8.- Traspasa (corta y pega) el método “establecerContenido”
+    void establecerContenido(String contenido); //8.- Traspasa, es decir, corta y pega el método “establecerContenido”
 
 }
