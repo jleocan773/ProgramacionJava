@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud3.ejemplos.Abstractos;
+package org.ieslosremedios.daw.ud3.ejemplos.abstractos;
 
 public class Perro extends Animal {
     final static Integer numPatas = 4;

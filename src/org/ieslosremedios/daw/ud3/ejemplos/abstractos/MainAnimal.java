@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud3.ejemplos.Abstractos;
+package org.ieslosremedios.daw.ud3.ejemplos.abstractos;
 
 public class MainAnimal {
     public static void main(String[]args){

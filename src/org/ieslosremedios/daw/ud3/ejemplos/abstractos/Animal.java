@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud3.ejemplos.Abstractos;
+package org.ieslosremedios.daw.ud3.ejemplos.abstractos;
 public abstract class Animal {
     abstract Integer getNumPatas();
     abstract Boolean esVolador();
