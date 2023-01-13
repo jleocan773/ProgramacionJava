@@ -1,5 +1,6 @@
 package org.ieslosremedios.daw.ud3.ejercicios.polimorfismo;
 
+//Creamos la Clase Paloma que hereda tanto de Animal como de Volador
 public class Paloma extends Animal implements Volador{
 
     @Override
