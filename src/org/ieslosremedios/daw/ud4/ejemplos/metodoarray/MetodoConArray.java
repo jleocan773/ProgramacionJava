@@ -13,7 +13,7 @@ public class MetodoConArray {
         System.out.println(arrayDeEntrada[0]);
         System.out.println(arrayDeEntrada[1]);
         System.out.println(arrayDeEntrada[2]);
-        int[][] datosRetorno = metodo(5,10,"Miau",arrayDeEntrada);
+        int[][] datosRetorno = metodo(x,y,z,arrayDeEntrada);
         //Imprimimos los valores después de ejecutar el método
         System.out.println(x);
         System.out.println(y);
