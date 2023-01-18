@@ -13,12 +13,12 @@ public class Main {
 
         String s = "Hola";
 
-        //6.- Ahora vamos a incluir como parámetro una variable a de tipo array unidimensional de elementos tipo Double inicializada a los valores que  desemos.
+        //6.- Ahora vamos a incluir como parámetro una variable a de tipo array unidimensional de elementos tipo Double inicializada a los valores que  deseemos.
         // Probamos igualmente si cambia tras la invocación del método o no. El cambio que realizará el método sobre el parámetro tipo array será el de incrementar
-        // en 1 las posiciones primera (no la 1, sino la primera), última y la que ocupe la posición de en medio (redondeando hacia abajo. p.ej. Si tiene 4
+        // en 1 las posiciones primera (no la 1, sino la primera), última y la que ocupe la posición de en medio (redondeando hacia abajo. p. ej. Si tiene 4
         // posiciones la de en medio será la segunda).
 
-        Double[] arrayDouble = {1.32d,2.51d,34.56d,40.20d,10.50d};
+        Double[] a = {1.32d,2.51d,34.56d,40.20d,10.50d};
 
         //4.- Invoca el método "m" desde main enviando "x" como argumento. Comprueba si la variable "x" cambia de valor después de ejecutar el método. Para eso
         //puedes imprimir las variables antes de invocar al método y después.
@@ -27,9 +27,9 @@ public class Main {
         System.out.println("Variables antes de ejecutar los métodos: ");
         System.out.println(x);
         System.out.println(s);
-        System.out.println(arrayDouble[0]);
-        System.out.println(arrayDouble[2]);
-        System.out.println(arrayDouble[4]);
+        System.out.println(a[0]);
+        System.out.println(a[(a.length - 1) / 2]);
+        System.out.println(a[4]);
         System.out.println("-------------------------------------------");
 
 
@@ -39,35 +39,36 @@ public class Main {
         m(x,s); //Ejecutamos el método que debería de poner el String en Mayúsculas
         System.out.println(x); //El valor no cambia
         System.out.println(s); //El valor no cambia
-        m(arrayDouble, 2); //Ejecutamos el método que creará un array bidimensional <--- Esto funciona regular
-        m(x,s, arrayDouble); //Ejecutamos el método que suma uno (1) al primer, último y la posición intermedia del array
-        System.out.println(arrayDouble[0]); //Como hemos explicado abajo, el valor cambia, porque se ha sustituido
-        System.out.println(arrayDouble[2]); //Como hemos explicado abajo, el valor cambia, porque se ha sustituido
-        System.out.println(arrayDouble[4]); //Como hemos explicado abajo, el valor cambia, porque se ha sustituido
+        m(a, 2); //Ejecutamos el método que creará un array bidimensional <--- Esto funciona regular
+        metodoArrayClase(x, s, a); //Ejecutamos el método que creamos en clase del array
+        m(x,s, a); //Ejecutamos el método que suma uno (1) al primer, último y la posición intermedia del array
+        System.out.println(a[0]); //Como hemos explicado abajo, el valor cambia, porque se ha sustituido
+        System.out.println(a[(a.length - 1) / 2]); //Como hemos explicado abajo, el valor cambia, porque se ha sustituido
+        System.out.println(a[(a.length - 1)]); //Como hemos explicado abajo, el valor cambia, porque se ha sustituido
         System.out.println("-------------------------------------------");
 
     }
 
-    //3.- Crea un método "m" que no devuelva nada y reciba un parámetro de nombre x y tipo int. El método incrementará en una unidad el valor del parámetro.
+    //3.- Crea un método "m" que no devuelva nada y reciba un parámetro de nombre "x" y tipo int. El método incrementará en una unidad el valor del parámetro.
     public static void m(int x){
         x = x + 1;
-    };
+    }
 
     public static void m(int x, String s){
         s = (s.toUpperCase());
     }
 
-    public static void m(int x, String s, Double[] arrayDouble){
-        arrayDouble[0] = (arrayDouble[0] + 1); //Al ejecutar esto, se va a pasar una copia de la referencia de arrayDouble[0], y esta sustituirá a la original
-        arrayDouble[2] = (arrayDouble[2] + 1); //Al ejecutar esto, se va a pasar una copia de la referencia de arrayDouble[2], y esta sustituirá a la original
-        arrayDouble[4] = (arrayDouble[4] + 1); //Al ejecutar esto, se va a pasar una copia de la referencia de arrayDouble[4], y esta sustituirá a la original
+    public static void m(int x, String s, Double[] a){
+        a[0]++; //Al ejecutar esto, se va a pasar una copia de la referencia de a[0], y esta sustituirá a la original
+        a[(a.length - 1) / 2]++; //Al ejecutar esto, se va a pasar una copia de la referencia de a[2], y esta sustituirá a la original
+        a[(a.length - 1)]++; //Al ejecutar esto, se va a pasar una copia de la referencia de a[4], y esta sustituirá a la original
     }
 
     // 7.- Cambiamos el método (¿o seguimos sobrecargando?) para que devuelva un array bidimensional de tipo int, formando una matriz de N x M, donde N ese el
     // tamaño del array de Doubles del parámetro de entrada y M es igual a 2. Vamos a copiar el array de entrada al de salida: para cada posición del array de
     // salida guardaremos primero la parte entera correspondiente a la misma posición del array de entrada y la parte decimal después.
-    public static void m(Double[] arrayDouble, int n){
-        int arrayInt [][] = new int [arrayDouble.length] [n];
+    public static void m(Double[] arrayDouble, int n) {
+        int arrayInt[][] = new int[arrayDouble.length][n];
 
         //Para quedarme con la parte entera y decimal para construir los arrays voy a hacer lo siguiente*
         //Si divido un número decimal entre 1, el resultado será la parte decimal, la cual guardaré en una variable "decimalX"
@@ -102,4 +103,31 @@ public class Main {
 
         System.out.println(arrayInt[3][1]);
     }
+
+        //Método del Array que hicimos en clase
+
+        public static int[][] metodoArrayClase(int x, String s, Double [] input){
+        int n = input.length;
+        int m = 2;
+        int [][] output = new int [n][m];
+
+        m(x, s, input);
+
+        output[0][0] = (int)Math.floor(input[0]);
+        output[0][1] = (int)Math.floor(input[0]);
+
+        output[1][0] = (int)Math.floor(input[1]);
+        output[1][1] = (int)Math.floor(input[1]);
+
+        output[2][0] = (int)Math.floor(input[2]);
+        output[2][1] = (int)Math.floor(input[2]);
+
+        output[3][0] = (int)Math.floor(input[3]);
+        output[3][1] = (int)Math.floor(input[3]);
+
+        output[4][0] = (int)Math.floor(input[4]);
+        output[4][1] = (int)Math.floor(input[4]);
+
+        return output;
+        }
 }
