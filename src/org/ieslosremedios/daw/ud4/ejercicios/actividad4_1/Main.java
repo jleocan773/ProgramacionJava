@@ -114,19 +114,19 @@ public class Main {
         m(x, s, input);
 
         output[0][0] = (int)Math.floor(input[0]);
-        output[0][1] = (int)Math.floor(input[0]);
+        output[0][1] = (int)Math.round(input[0]);
 
         output[1][0] = (int)Math.floor(input[1]);
-        output[1][1] = (int)Math.floor(input[1]);
+        output[1][1] = (int)Math.round(input[1]);
 
         output[2][0] = (int)Math.floor(input[2]);
-        output[2][1] = (int)Math.floor(input[2]);
+        output[2][1] = (int)Math.round(input[2]);
 
         output[3][0] = (int)Math.floor(input[3]);
-        output[3][1] = (int)Math.floor(input[3]);
+        output[3][1] = (int)Math.round(input[3]);
 
         output[4][0] = (int)Math.floor(input[4]);
-        output[4][1] = (int)Math.floor(input[4]);
+        output[4][1] = (int)Math.round(input[4]);
 
         return output;
         }
