@@ -1,7 +1,7 @@
 package org.ieslosremedios.daw.ud4.ejemplos.operacionesarray.recorrer;
 
 
-public class Main {
+public class ArrayInt {
     public static void main(String[] args) {
         int[] a = {2, 4, 6, 8, 10,}; //30
         int[] b = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; //55
