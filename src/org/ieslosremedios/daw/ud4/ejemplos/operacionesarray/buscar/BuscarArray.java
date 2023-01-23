@@ -3,13 +3,17 @@ import java.util.Arrays;
 
 public class BuscarArray {
     public static void main(String[] args) {
-        int[] a = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
-
-        busquedaNum(15, a);
+        int[] a = {1,3,7,10};
+        System.out.println("Búsqueda manual: " + busquedaManual(a,7));
+        System.out.println("Búsqueda binarySearch: " + Arrays.binarySearch(a,7)); //El binary search requiere que esté ordenado
     }
 
-    public static void busquedaNum(int n, int[] a) {
-        for (int i = 0; n != a[i]; i++) {
+    private static int busquedaManual(int[] a, int n) {
+        for (int i = 0; i < a.length; i++) {
+            if (n == a[i]) {
+                return i;
+            }
         }
+        return -1;
     }
 }
