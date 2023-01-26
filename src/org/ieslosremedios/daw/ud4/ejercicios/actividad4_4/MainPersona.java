@@ -2,6 +2,8 @@ package org.ieslosremedios.daw.ud4.ejercicios.actividad4_4;
 
 import org.ieslosremedios.daw.ud4.ejemplos.compararpersona.Persona;
 
+import java.util.Arrays;
+
 public class MainPersona {
     public static void main(String[] args) {
 
@@ -19,7 +21,7 @@ public class MainPersona {
         //Hemos sobreescrito el método "toString" en "Persona", indicando que devuelva el nombre y la edad
 
         for (Persona p: arrayPersonas) {
-            System.out.println(p.toString());
+            System.out.println(p);
         }
 
         //Vemos que muestra correctamente la variable que hemos definido en la sobrescritura del método, así que se

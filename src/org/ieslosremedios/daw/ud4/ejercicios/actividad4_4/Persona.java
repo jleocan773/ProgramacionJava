@@ -16,8 +16,7 @@ public class Persona {
     public String toString(){
         this.nombre = nombre;
         this.edad = edad;
-        String definicion = nombre + " tiene " + edad + " años";
-        return definicion;
+        return nombre + " tiene " + edad + " años.";
     }
 
 }
