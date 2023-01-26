@@ -5,17 +5,14 @@ import java.util.Random; //Importo "Random" para poder crear números aleatorios
 public class Main {
     public static void main(String[] args) {
 
-        //TODO 1.- Crea un array con 10 números aleatorios
-        Random numaleatorio = new Random(); //Creo una variable "numaleatorio" de tipo Random con su constructor
-        int[] arrayAleatorio = new int[10]; //Creo "arrayAleatorio" de tipo int que tendrá 10 posiciones, pero no le asigno contenido
         int[] unArrayParaComparar = {1,2,3,4,5}; //Creo un array que utilizaré más tarde en el apartado 5
         int[] otroArrayParaComparar = {1,2,3,4,5}; //Creo un array que utilizaré más tarde en el apartado 5
         int[] yEsteOtroArrayParaClonar = {5,10,15,20,25,30}; //Creo un array que utilizaré mñas tarde en el apartado 6
 
+        //TODO 1.- Crea un array con 10 números aleatorios
+        int[] arrayAleatorio = crearArrayAleatorio(5); //Creo un array de tipo int que tendrá el valor de la salida del método "crearArrayAleatorio"
+        System.out.println(Arrays.toString(arrayAleatorio)); //Lo muestro por pantalla
 
-        for (int i = 0; i < arrayAleatorio.length; i++) { //El contenido se lo asignará con un bucle for
-            arrayAleatorio[i] = numaleatorio.nextInt(100); //Usando el método "nextInt()", que crea un número aleatorio, asigno a todas las posiciones de "arrayAleatorio"
-        }
         System.out.println("---------------------------------------------------------");
 
 
@@ -51,17 +48,42 @@ public class Main {
         //    3º La tercera usando Arrays.copyOfRange
         //    4º La última usando System.arraycopy
 
-        int[][] clonArray = new int[4][1];
-        System.out.println("6.- Realiza 4 copias del array en un nuevo array de 4 posiciones");
-        clonArray[0] = yEsteOtroArrayParaClonar.clone();
-        clonArray[1] = Arrays.copyOf(yEsteOtroArrayParaClonar, 4);
-        clonArray[2] =  Arrays.copyOfRange(yEsteOtroArrayParaClonar, 4, yEsteOtroArrayParaClonar.length + 3);
-        //clonArray[3] = System.arraycopy(yEsteOtroArrayParaClonar,4,clonArray,4,4);
+        int[][]arrayClon = new int[4][0];
+        System.out.println("6.- Realiza 4 copias del array en un nuevo array de 4 posiciones\n" );
 
-        System.out.println(Arrays.toString(clonArray));
+        System.out.println("1º Una copia será utilizando el clone:");
+        arrayClon[0] = arrayAleatorio.clone();
+        System.out.println(Arrays.toString(arrayAleatorio));
+        System.out.println(Arrays.toString(arrayClon[0]) + "\n");
+
+        System.out.println("2º La siguiente usando Arrays.copyOf:");
+        arrayClon[1] = Arrays.copyOf(arrayAleatorio, 4);
+        System.out.println(Arrays.toString(arrayClon[1]) + "\n");
+
+        System.out.println("3º La tercera usando Arrays.copyOfRange");
+        arrayClon[2] = Arrays.copyOfRange(arrayAleatorio, 0, 4);
+        System.out.println(Arrays.toString(arrayClon[2]) + "\n");
+
+        System.out.println("4º La última usando System.arraycopy");
+        int[] arraySystemCopy = new int[4];
+        System.arraycopy(arrayAleatorio, 0, arraySystemCopy, 0, arrayAleatorio.length - 1);
+        arrayClon[3] = arraySystemCopy;
+        System.out.println(Arrays.toString(arrayClon[3]));
+
     }
 
     //TODO 1.- Método para Crear Array con números aleatorios
+
+    private static int[] crearArrayAleatorio(int longitudArray) {
+        Random numaleatorio = new Random();
+        int[] a = new int[longitudArray];
+        for (int i = 0; i < a.length; i++) {
+            a[i] =  numaleatorio.nextInt(100);
+        }
+
+        return a;
+
+    }
 
     //TODO 2.- Método ordenar invertido
 
