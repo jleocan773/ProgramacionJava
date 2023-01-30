@@ -53,7 +53,6 @@ public class Main {
         System.out.println("1º Una copia será utilizando el clone:");
         metodoClone(arrayClon, arrayAleatorio);
 
-
         System.out.println("2º La siguiente usando Arrays.copyOf:");
         metodoCloneOf(arrayClon, arrayAleatorio);
 
@@ -63,7 +62,7 @@ public class Main {
         System.out.println("4º La última usando System.arraycopy");
         metodoSystemClone(arrayClon, arrayAleatorio);
 
-        System.out.println("Mostrando el arrayClon al completo: ");
+        System.out.println("\nMostrando el arrayClon al completo: ");
         mostrarArrayClon(arrayClon);
     }
 
@@ -127,22 +126,29 @@ public class Main {
     //    3º La tercera usando Arrays.copyOfRange
     //    4º La última usando System.arraycopy
 
-    //Método con Clone
+
+    //Método con Clone, copiando el array al completo
 
     private static void metodoClone(int[][] arrayQueRecibeCopia, int[] arrayQueSeCopia) {
         arrayQueRecibeCopia[0] = arrayQueSeCopia.clone();
         System.out.println(Arrays.toString(arrayQueRecibeCopia[0]) + "\n");
     }
 
+    //Método con CloneOf, copiando desde la primera posición hasta la longitud indicada
+
     private static void metodoCloneOf(int[][] arrayQueRecibeCopia, int[] arrayQueSeCopia) {
         arrayQueRecibeCopia[1] = Arrays.copyOf(arrayQueSeCopia, 4);
         System.out.println(Arrays.toString(arrayQueRecibeCopia[1]) + "\n");
     }
 
+    //Método con CloneOfRange, copiando desde donde se indica a la posición indicada
+
     private static void metodoCloneOfRange(int[][] arrayQueRecibeCopia, int[] arrayQueSeCopia) {
         arrayQueRecibeCopia[2] = Arrays.copyOfRange(arrayQueSeCopia, 0, 4);
         System.out.println(Arrays.toString(arrayQueRecibeCopia[2]) + "\n");
     }
+
+    //Método SystemClone, copiando desde donde se indica a la posición indicada
 
     private static void metodoSystemClone(int[][] arrayQueRecibeCopia, int[] arrayQueSeCopia) {
         int[] arraySystemCopy = new int[4];
