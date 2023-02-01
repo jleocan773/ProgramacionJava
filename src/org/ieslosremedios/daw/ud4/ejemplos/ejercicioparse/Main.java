@@ -22,5 +22,7 @@ public class Main {
         String sNum2 = Integer.toString(num2);
         System.out.println(sNum2);
         System.out.println(num2);
+        System.out.println(num2 + "");
+
     }
 }

@@ -24,6 +24,8 @@ public class Parse {
 
         //Usando el método "toString" de Integer
         s = Integer.toString(155);
+
+        //Pintamos s, que será un tipo String
         System.out.println(s);
 
 
