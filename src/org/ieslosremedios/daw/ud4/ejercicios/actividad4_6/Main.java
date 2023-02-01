@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud4.ejemplos.arraytostring;
+package org.ieslosremedios.daw.ud4.ejercicios.actividad4_6;
 
 import java.util.Arrays;
 
@@ -71,11 +71,11 @@ public class Main {
         Arrays.sort(arrayString);
         for(int i = 0; i < arrayString.length; i++)
             System.out.print(arrayString[i] + " ");
-        }
     }
+}
 
-    //TODO Un método que dado un pequeño texto devuelva un array de cadenas codificando el texto, de modo que cada vez que aparezca el carácter punto (.)
-    // se corte esa frase y se meta en una posición del array y que todas las vocales se sustituyan por el número gráficamente más parecido
-    // o --> 0 | i --> 1 | a --> 4 | e --> 3 | u --> 8
+//TODO Un método que dado un pequeño texto devuelva un array de cadenas codificando el texto, de modo que cada vez que aparezca el carácter punto (.)
+// se corte esa frase y se meta en una posición del array y que todas las vocales se sustituyan por el número gráficamente más parecido
+// o --> 0 | i --> 1 | a --> 4 | e --> 3 | u --> 8
 
 
