@@ -74,8 +74,5 @@ public class Main {
         }
     }
 
-    //TODO Un método que dado un pequeño texto devuelva un array de cadenas codificando el texto, de modo que cada vez que aparezca el carácter punto (.)
-    // se corte esa frase y se meta en una posición del array y que todas las vocales se sustituyan por el número gráficamente más parecido
-    // o --> 0 | i --> 1 | a --> 4 | e --> 3 | u --> 8
 
 
