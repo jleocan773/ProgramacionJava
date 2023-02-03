@@ -31,6 +31,8 @@ public class Main {
         ordenarAlfabeticamenteArray(s4);
         System.out.print("\nArray int pasado a Array String: ");
         System.out.println(Arrays.toString(strings));
+        System.out.print("Codificamos un array: ");
+        System.out.println(Arrays.toString(codificarCadena("Saludos. mi nombre es Iñigo Montoya. tu mataste a mi padre. tu mataste a mi padre. preparate a morir")));
 
     }
 
@@ -68,9 +70,9 @@ public class Main {
     }
 
     //TODO Imprime cadenas en orden alfabético las cadenas dadas por un array de cadenas
-    //Usamos el método de Arrays "sort()" para ordenar alfabéticamente el array introducido, y después con un bucle
-    //vamos pintando cada posición. En el orden de unicode las minúsculas están después de las mayúsculas, así que
-    //si en el array hubiese una palabra en minúsculas, se pintarían después de las que tienen mayúscula.
+    // Usamos el método de Arrays "sort()" para ordenar alfabéticamente el array introducido, y después con un bucle
+    // vamos pintando cada posición. En el orden de unicode las minúsculas están después de las mayúsculas, así que
+    // si en el array hubiese una palabra en minúsculas, se pintarían después de las que tienen mayúscula.
     private static void ordenarAlfabeticamenteArray(String[] arrayString) {
         Arrays.sort(arrayString);
         for (int i = 0; i < arrayString.length; i++)
@@ -81,6 +83,18 @@ public class Main {
     //TODO Un método que dado un pequeño texto devuelva un array de cadenas codificando el texto, de modo que cada vez que aparezca el carácter punto (.)
     // se corte esa frase y se meta en una posición del array y que todas las vocales se sustituyan por el número gráficamente más parecido
     // o --> 0 | i --> 1 | a --> 4 | e --> 3 | u --> 8
+
+    public static String[] codificarCadena (String texto){
+
+        String cambiarVocales = texto.replaceAll("(?i)a", "4").replaceAll("(?i)e", "3").replaceAll("(?i)i", "1").replaceAll("(?i)o", "0").replaceAll("u", "v").replaceAll("U", "V");
+        String[] arrayCodificado = cambiarVocales.split("\\.");
+
+        for (int i = 0; i < arrayCodificado.length; i++){
+            arrayCodificado[i] = arrayCodificado[i].trim();
+        }
+        return arrayCodificado;
+    }
+
 
 
     //TODO Convertir los siguientes números a String y posteriormente ordenarlos alfabéticamente de menor a mayor
