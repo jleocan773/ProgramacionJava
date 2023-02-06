@@ -4,6 +4,7 @@ public class TrianguloIsos extends  Geometria implements  Coloreable{
     double base;
     double altura;
     double ladosiguales = 3d;
+    String color;
 
     public TrianguloIsos(double base, double altura, double ladosiguales){
         this.base = base;
@@ -22,5 +23,11 @@ public class TrianguloIsos extends  Geometria implements  Coloreable{
     double calcularPerimetro() {
         double perimetro = ladosiguales + base;
         return perimetro;
+    }
+
+    @Override
+    public void colorear(String color) {
+        this.color = color;
+        System.out.println(color);
     }
 }
