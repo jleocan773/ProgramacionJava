@@ -1,11 +1,10 @@
-package org.ieslosremedios.daw.ud5.ejemplos;
-import org.ieslosremedios.daw.ud4.ejercicios.actividad4_4.Persona;
+package org.ieslosremedios.daw.ud5.ejemplos.HashSet;
 
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class EjemploConjuntos {
+public class EjemploHashSet {
     public static void main(String[] args) {
         Set<String> conjunto = new HashSet<>(); //Creamos un conjunto de tipo String, inicializado a HashSet
 
