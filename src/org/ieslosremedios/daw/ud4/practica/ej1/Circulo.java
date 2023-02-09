@@ -2,6 +2,7 @@ package org.ieslosremedios.daw.ud4.practica.ej1;
 
 public class Circulo extends Geometria implements  Coloreable{
     double radio;
+    String color;
 
     public Circulo(double radio){
         this.radio = radio;
@@ -17,5 +18,11 @@ public class Circulo extends Geometria implements  Coloreable{
     double calcularPerimetro() {
         double perimetro = 3.14 * (radio*2);
         return perimetro;
+    }
+
+    @Override
+    public void colorear(String color) {
+        this.color = color;
+        System.out.println(color);
     }
 }
