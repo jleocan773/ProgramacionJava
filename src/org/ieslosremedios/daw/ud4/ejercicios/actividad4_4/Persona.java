@@ -11,6 +11,7 @@ public class Persona {
         this.edad = edad;
     }
 
+
     //Sobreescribimos el método toString para que devuelva una variable "definicion" con el nombre y la edad
     @Override
     public String toString(){
