@@ -1,8 +1,10 @@
-package org.ieslosremedios.daw.ud5.ejemplos.TreeSet;
+package org.ieslosremedios.daw.ud5.ejemplos.treeSet;
 import org.ieslosremedios.daw.ud4.ejemplos.compararpersona.Persona;
+import org.ieslosremedios.daw.ud5.ejemplos.comparadores.ComparadorPorEdad;
+import org.ieslosremedios.daw.ud5.ejemplos.comparadores.ComparadorPorNombre;
 
+import java.sql.SQLOutput;
 import java.util.Iterator;
-import java.util.Set;
 import java.util.TreeSet;
 
 
@@ -43,8 +45,13 @@ public class EjemploTreeSet {
             System.out.print(s + " ");
         }
 
-        //TreeSet de Personas
+        //Creamos los Comparadores para usar sus métodos
 
+        ComparadorPorEdad comparadorPorEdad = new ComparadorPorEdad();
+        ComparadorPorNombre comparadorPorNombre = new ComparadorPorNombre();
+
+        //TreeSet de Personas
+        //Creamos y añadimos valores
         TreeSet <Persona> treePersonas = new TreeSet<>();
         Persona p1 = new Persona("Zoe", 18);
         Persona p2 = new Persona("Samuel",19);
@@ -57,9 +64,25 @@ public class EjemploTreeSet {
             treePersonas.add(p4);
             treePersonas.add(p5);
 
+            //Recorremos el contenido
             System.out.println ("\nTreeSet de tipo Persona: ");
-
             for (Persona p: treePersonas) {System.out.println(p);}
+
+            //Método equalsTo
+            System.out.println("Método equalsTo: ");
+            System.out.println(p1.equals(p1));
+
+            //Método compareTo de la clase Persona
+            System.out.println("compareTo de Persona: ");
+            System.out.println(p1.compareTo(p2));
+
+            //Método de la clase comparadorPorEdad
+            System.out.println("Comparador por Edad: ");
+            System.out.println(comparadorPorEdad.compare(p1, p3));
+
+            //Método de la clase comparadorPorNombre
+            System.out.println("Comparador por Nombre: ");
+            System.out.println(comparadorPorNombre.compare(p1,p2));
     }
 }
 

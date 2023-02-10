@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud5.ejemplos.LinkedHashSet;
+package org.ieslosremedios.daw.ud5.ejemplos.linkedHashSet;
 
 import java.util.HashSet;
 import java.util.Iterator;

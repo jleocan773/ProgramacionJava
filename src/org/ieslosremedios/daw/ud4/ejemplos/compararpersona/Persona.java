@@ -7,6 +7,15 @@ import java.util.Objects;
 public class Persona implements Comparable {
      public String nombre;
      public int edad;
+     public String apellidos;
+
+     public String getApellidos() {
+          return apellidos;
+     }
+
+     public void setApellidos(String apellidos) {
+          this.apellidos = apellidos;
+     }
 
      public Persona(String nombre) {
           this.nombre = nombre;
