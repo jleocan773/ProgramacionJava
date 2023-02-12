@@ -9,7 +9,6 @@ public class Main {
 
     }
 
-
     private static int contarPalabras (String texto){ //Creamos el método "contarPalabras" que devolverá un int, aceptando como parámetro un texto para contar
         int contador = 0; //Creo una variable de tipo int que usaré para contar
         String[] arrayParaContar = texto.split(" "); //Creo un array que tendrá como elementos cada palabra del texto separada de un espacio
