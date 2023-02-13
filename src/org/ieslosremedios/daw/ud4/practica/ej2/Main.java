@@ -5,17 +5,36 @@ package org.ieslosremedios.daw.ud4.practica.ej2;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(contarPalabras("Esta frase tiene cinco palabras"));
+        System.out.println(contarPalabras("Frase frase aquí hay siete palabras distintas"));
 
     }
 
     private static int contarPalabras (String texto){ //Creamos el método "contarPalabras" que devolverá un int, aceptando como parámetro un texto para contar
         int contador = 0; //Creo una variable de tipo int que usaré para contar
-        String[] arrayParaContar = texto.split(" "); //Creo un array que tendrá como elementos cada palabra del texto separada de un espacio
-        for (int i = 0; i < arrayParaContar.length; i++) { //Mientras que "i" sea mejor que la longitud del array creado anteriormente
-            contador++; //Se le suma 1 (uno) al valor de contador
+        texto = texto.toLowerCase(); //Paso el texto a minúscula
+        String[] arrayPalabrasSeparadas = texto.split(" "); //Creo un array que tendrá como elementos cada palabra del texto separada de un espacio
+        String[] palabrasDistintas = new String[arrayPalabrasSeparadas.length]; //Este array será sobre el que haré operaciones para ver las palabras distintas
+
+        for (String palabra : arrayPalabrasSeparadas){
+            if (!palabraRepetida(palabrasDistintas, contador, palabra)){
+                palabrasDistintas[contador] = palabra;
+                contador++;
+            }
         }
         return contador; //Se devuelve contador
     }
+
+    private static boolean palabraRepetida(String[] arrayPalabrasSeparadas, int posicionActual, String palabra){
+        boolean repetida = false;
+        for (int i = 0; i < posicionActual; i++){
+            if (arrayPalabrasSeparadas[i].equals(palabra)){
+                repetida = true;
+                break;
+            }
+        }
+        return repetida;
+    }
+
+
 
 }

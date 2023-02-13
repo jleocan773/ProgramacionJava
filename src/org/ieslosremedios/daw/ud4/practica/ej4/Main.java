@@ -1,7 +1,7 @@
 package org.ieslosremedios.daw.ud4.practica.ej4;
 public class Main {
     public static void main(String[] args) {
-        String dni = "20067773C"; //Creamos una variable de tipo String que contendrá el DNI
+        String dni = "27998871M"; //Creamos una variable de tipo String que contendrá el DNI
         validarDNI(dni);          //Ejecutamos el método validarDNI, definido abajo
     }
 

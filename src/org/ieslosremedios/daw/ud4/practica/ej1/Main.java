@@ -18,7 +18,7 @@ public class Main {
         Geometria[] figuras = {circ1, circ2, cuad1, cuad2, triiso1, triiso2 };
 
        //Ejecutamos el método calcularAreaTotal para calcular el área como pide el ejercicio
-        System.out.println("El area total de las figuras introducidas es: " + calcularAreaTotal(figuras));
+        System.out.println("El área total de las figuras introducidas es: " + calcularAreaTotal(figuras));
         System.out.println("El perímetro total de las figuras introducidas es: " + calcularPerimetroTotal(figuras));
 
         // Para comprobar que la suma es correcta:

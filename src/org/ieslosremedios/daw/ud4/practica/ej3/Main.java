@@ -40,15 +40,34 @@ public class Main {
 
     //Conocer el mayor de los números.
     private static int numeroMayor(int[] array){
-        Arrays.sort(array);
-        return array[array.length-1];
+        int mayor = 0;
+        for (int i = 0; i < array.length; i++){
+            if (array[i] > mayor ){
+                mayor = array[i];
+            }
+        }
+
+        return mayor;
     }
+
+    //Lo que tenía antes
+    //        Arrays.sort(array);
+    //        return array[array.length - 1];
 
     //Conocer el mayor de los números.
     private static int numeroMenor(int[] array){
-        Arrays.sort(array);
-        return array[0];
+        int menor = 1000;
+        for (int i = 0; i < array.length; i++){
+            if (array[i] < menor ){
+                menor = array[i];
+            }
+        }
+        return menor;
     }
+
+//        Arrays.sort(array);
+//        return array[0];
+
 
     //Obtener la suma de todos los números
     private static int sumarNumeros (int[] array){
