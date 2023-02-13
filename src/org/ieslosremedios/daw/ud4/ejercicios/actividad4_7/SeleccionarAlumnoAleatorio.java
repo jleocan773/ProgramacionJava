@@ -27,8 +27,6 @@ public class SeleccionarAlumnoAleatorio {
          Alumno[] alumnos = {Pablo, David, JuanMaria, Jossie, Victor, Jose, Jorge, Ricardo, Adrian, JuanManuelH, DanielAlfonso, Diego, Jonathan, JuanManuelS, Julian, JoseAntonio, AntonioJesus};
 
          seleccionarAleatorio(alumnos);
-         Pablo.participacion++;
-        System.out.println(Pablo.participacion);
     }
 
     public static void seleccionarAleatorio(Alumno[] alumnos) {

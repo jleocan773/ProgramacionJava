@@ -16,7 +16,10 @@ public class Main {
 
         //Creamos el array "figuras", que será de tipo Geometría, con los objetos recién creados
         Geometria[] figuras = {circ1, circ2, cuad1, cuad2, triiso1, triiso2 };
-        System.out.println(calcularAreaTotal(figuras));
+
+       //Ejecutamos el método calcularAreaTotal para calcular el área como pide el ejercicio
+        System.out.println("El area total de las figuras introducidas es: " + calcularAreaTotal(figuras));
+        System.out.println("El perímetro total de las figuras introducidas es: " + calcularPerimetroTotal(figuras));
 
         // Para comprobar que la suma es correcta:
         // System.out.println(circ1.calcularArea() + circ2.calcularArea() + cuad1.calcularArea() + cuad2.calcularArea() + triiso1.calcularArea() + triiso2.calcularArea());
@@ -25,9 +28,34 @@ public class Main {
     }
 
     private static double calcularAreaTotal(Geometria[] figurasParaCalcularArea){
+        //Creamos estas variables para comprobar que si un elemento es el primero de su tipo
+        boolean primerCirculo = true, primerCuadrado = true, primerTrianguloIsos = true;
         double areaTotal = 0; //Creamos la variable que vamos a devolver, que será double,
         for(int i = 0; i < figurasParaCalcularArea.length; i++){ //Mientras que "i" sea menor que la longitud se ejecutará lo siguiente:
             areaTotal += figurasParaCalcularArea[i].calcularArea(); //Al valor de "areaTotal" se le suma el resultado del método de calcularArea del elemento "i"
+
+            //Usamos "instanceof" para comprobar la instancia del elemento "i" y si es el primero de su tipo lo coloreamos y
+            //ponemos el booleano "primerCirculo" en falso
+            if (primerCirculo && figurasParaCalcularArea[i] instanceof Circulo){
+                primerCirculo = false;
+                ((Circulo) figurasParaCalcularArea[i]).colorear("Azul");
+            }
+            else if (primerCuadrado && figurasParaCalcularArea[i] instanceof Cuadrado){
+                primerCuadrado = false;
+                ((Cuadrado) figurasParaCalcularArea[i]).colorear("Azul");
+            }
+            else if (primerTrianguloIsos && figurasParaCalcularArea[i] instanceof TrianguloIsos){
+                primerTrianguloIsos = false;
+                ((TrianguloIsos) figurasParaCalcularArea[i]).colorear("Azul");
+            }
+        }
+        return areaTotal;
+    }
+
+    private static double calcularPerimetroTotal(Geometria[] figurasParaCalcularArea){
+        double perimetroTotal = 0; //Creamos la variable que vamos a devolver, que será double,
+        for(int i = 0; i < figurasParaCalcularArea.length; i++){ //Mientras que "i" sea menor que la longitud se ejecutará lo siguiente:
+            perimetroTotal += figurasParaCalcularArea[i].calcularPerimetro(); //Al valor de "perimetroTotal" se le suma el resultado del método de calcularArea del elemento "i"
 
             //No sé como acceder al nombre de cada elemento para compararlo con el nombre que se le asignaría a la primera figura de cada tipo
             if (figurasParaCalcularArea[i].equals("circ1") ){
@@ -40,7 +68,7 @@ public class Main {
                 ((TrianguloIsos) figurasParaCalcularArea[i]).colorear("Verde");
             }
         }
-        return areaTotal;
+        return perimetroTotal;
     }
 
 
