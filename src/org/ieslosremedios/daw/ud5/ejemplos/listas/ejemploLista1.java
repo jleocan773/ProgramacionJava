@@ -1,9 +1,9 @@
-package org.ieslosremedios.daw.ud5.ejemplos.arrayList;
+package org.ieslosremedios.daw.ud5.ejemplos.listas;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class arrayList {
+public class ejemploLista1 {
     public static void main(String[] args) {
         //Creamos una lista y le damos valores
         List<String> coches = new ArrayList<>();
