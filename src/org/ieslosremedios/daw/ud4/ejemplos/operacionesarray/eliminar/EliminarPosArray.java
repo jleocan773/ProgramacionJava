@@ -10,10 +10,10 @@ public class EliminarPosArray {
 
         //Invoco el método creado abajo indicando el array del que quiero borrar la posición y que posición quiero borrar
         //y el resultado de este lo guardo en un array "a" de tipo int.
-        int[] a = eliminarPosicion(arrayAEliminar, 0);
+        arrayAEliminar = eliminarPosicion(arrayAEliminar, 0);
 
         //Pinto el array
-        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(arrayAEliminar));
             }
 
     public static int[] eliminarPosicion( int[] a, int pos ) {
