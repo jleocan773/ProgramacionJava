@@ -18,6 +18,7 @@ public class Insertar {
             arrayPostInsercion[i] = arrayInt[i];
         }
         arrayPostInsercion[pos] = numInsertar;
+
         for (int i = pos + 1; i < arrayPostInsercion.length; i++) {
             arrayPostInsercion[i] = arrayInt[i - 1];
         }
