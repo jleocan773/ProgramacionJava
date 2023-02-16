@@ -13,26 +13,26 @@ public class ArrayString {
 //            System.out.println(Arrays.toString(matrizletras[i]));
 //        }
 
-        //Para un array bidimensional con bucle For
+//        Para un array bidimensional con bucle For
 
-//        for (int i = 0; i < matrizletras.length; i++){
-//            for (int j = 0; j < matrizletras[i].length; j++){
-//                System.out.printf(matrizletras[i][j]);
-//            }
-//        }
+        for (int i = 0; i < matrizletras.length; i++){
+            for (int j = 0; j < matrizletras[i].length; j++){
+                System.out.printf(matrizletras[i][j]);
+            }
+        }
 
         //Para un array bidimensional con bucle While
 
-        int i = 0;
-
-        while (i < matrizletras.length){
-            int j = 0;
-            while (j < matrizletras[i].length){
-                System.out.printf(matrizletras[i][j]);
-                j++;
-            }
-            i++;
-        }
+//        int i = 0;
+//
+//        while (i < matrizletras.length){
+//            int j = 0;
+//            while (j < matrizletras[i].length){
+//                System.out.printf(matrizletras[i][j]);
+//                j++;
+//            }
+//            i++;
+//        }
 
 
 

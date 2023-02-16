@@ -23,6 +23,6 @@ public class Cuadrado extends Geometria implements Coloreable{
     @Override
     public void colorear(String color) {
         this.color = color;
-        System.out.println(color);
+        System.out.println("He pintando el primer Cuadrado de color: " + color);
     }
 }

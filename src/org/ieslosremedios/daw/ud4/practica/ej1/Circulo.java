@@ -23,6 +23,6 @@ public class Circulo extends Geometria implements  Coloreable{
     @Override
     public void colorear(String color) {
         this.color = color;
-        System.out.println(color);
+        System.out.println("He pintando el primer Círculo de color: " + color);
     }
 }
