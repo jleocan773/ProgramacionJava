@@ -1,10 +1,10 @@
-package org.ieslosremedios.daw.ud5.ejemplos.listas;
+package org.ieslosremedios.daw.ud5.ejemplos.list;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class listIterator {
+public class listIteratorCoches {
         public static void main(String[] args) {
             //Creamos una lista y le damos valores
             List<String> coches = new ArrayList<>();

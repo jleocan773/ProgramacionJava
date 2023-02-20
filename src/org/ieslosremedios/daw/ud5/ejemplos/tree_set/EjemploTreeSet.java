@@ -1,9 +1,8 @@
-package org.ieslosremedios.daw.ud5.ejemplos.treeSet;
+package org.ieslosremedios.daw.ud5.ejemplos.tree_set;
 import org.ieslosremedios.daw.ud4.ejemplos.compararpersona.Persona;
 import org.ieslosremedios.daw.ud5.ejemplos.comparadores.ComparadorPorEdad;
 import org.ieslosremedios.daw.ud5.ejemplos.comparadores.ComparadorPorNombre;
 
-import java.sql.SQLOutput;
 import java.util.Iterator;
 import java.util.TreeSet;
 

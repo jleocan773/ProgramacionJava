@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud5.ejemplos.listas;
+package org.ieslosremedios.daw.ud5.ejemplos.list;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
