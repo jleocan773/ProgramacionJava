@@ -1,25 +1,24 @@
 package org.ieslosremedios.daw.ud5.ejercicios.actividad_51;
-import org.ieslosremedios.daw.ud4.ejemplos.compararpersona.Persona;
 
-import java.util.Set;
 import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
         Persona ana = new Persona("Ana", 20);
-        Persona pedro = new Persona("Pedro", 18);
+        Persona ana2 = new Persona("Ana", 24);
         Persona riley = new Persona("Riley", 22);
-        Persona paco = new Persona("Paco", 22);
-        Persona berto = new Persona("Berto", 19);
-        Persona luis = new Persona("Luis", 20);
+        Persona berto = new Persona("Berto", 18);
+        Persona zoe = new Persona("Zoe", 19);
+        Persona zoe2 = new Persona("Zoe", 25);
 
-        Set <Persona> conjuntoPersonas = new TreeSet<>();
-        conjuntoPersonas.add(ana);
-        conjuntoPersonas.add(pedro);
+        TreeSet<Persona> conjuntoPersonas= new TreeSet<>(new Comparador());
+
         conjuntoPersonas.add(riley);
-        conjuntoPersonas.add(paco);
+        conjuntoPersonas.add(ana);
+        conjuntoPersonas.add(zoe);
+        conjuntoPersonas.add(ana2);
         conjuntoPersonas.add(berto);
-        conjuntoPersonas.add(luis);
+        conjuntoPersonas.add(zoe2);
 
 
         System.out.println(conjuntoPersonas);
