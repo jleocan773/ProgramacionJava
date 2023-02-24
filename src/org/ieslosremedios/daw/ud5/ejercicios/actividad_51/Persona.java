@@ -5,9 +5,9 @@ package org.ieslosremedios.daw.ud5.ejercicios.actividad_51;
 import java.util.Objects;
 
 public class Persona implements Comparable {
-    public String nombre;
-    public int edad;
-    public String apellidos;
+    private String nombre;
+    private int edad;
+    private String apellidos;
 
 
     // Getters

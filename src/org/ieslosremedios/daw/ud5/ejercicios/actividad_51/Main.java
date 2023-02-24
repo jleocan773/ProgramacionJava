@@ -11,7 +11,7 @@ public class Main {
         Persona zoe = new Persona("Zoe", 19);
         Persona zoe2 = new Persona("Zoe", 25);
 
-        TreeSet<Persona> conjuntoPersonas= new TreeSet<>(new Comparador());
+        TreeSet<Persona> conjuntoPersonas= new TreeSet<>(new ComparadorInverso().reversed());
 
         conjuntoPersonas.add(riley);
         conjuntoPersonas.add(ana);
