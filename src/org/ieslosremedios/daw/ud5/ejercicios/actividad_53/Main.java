@@ -1,6 +1,7 @@
 package org.ieslosremedios.daw.ud5.ejercicios.actividad_53;
 
 import java.util.Iterator;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -39,7 +40,6 @@ public class Main {
                 mapaContador.put(key, 1);
             }
         }
-
             //Usamos un iterator para mostrar el número de veces que cada número está
             Iterator<Integer> itElementos = mapaContador.keySet().iterator();
             while(itElementos.hasNext()){
