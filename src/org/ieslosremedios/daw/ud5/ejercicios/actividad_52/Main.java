@@ -1,33 +1,36 @@
 package org.ieslosremedios.daw.ud5.ejercicios.actividad_52;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 
-public class Main extends TaskList{
+import static org.ieslosremedios.daw.ud5.ejercicios.actividad_52.TaskListMal.getTasks;
+
+public class Main {
     public static void main(String[] args) {
-        ArrayList<String> arrayList = new ArrayList<>();
+        TaskList listaTareas = new TaskList("arrayList");
 
-        LinkedList<String> linkedList = new LinkedList<>();
+        //Voy a
 
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Añadimos tareas: ");
-        addTask(arrayList, "Hacer la colada");
-        addTask(arrayList, "Sacar al perro");
-        addTask(arrayList, "Comprar pimientos");
-        addTask(arrayList, "Arreglar televisor");
-        System.out.println("Mostramos toda la lista con las tareas añadidas: " + arrayList);
+        listaTareas.addTask("Hacer la colada");
+        listaTareas.addTask("Sacar al perro");
+        listaTareas.addTask("Comprar pimientos");
+        listaTareas.addTask("Arreglar televisor");
+        //Cada vez que hago un Sout de la lista aparece la referencia en lugar de los contenidos de esta, ¿cómo podría hacer para mostrar los elementos en lugar
+        //de la referencia sin esperar a pasarlo a un array?
+        //System.out.println("Mostramos toda la lista con las tareas añadidas: " + listaTareas);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Quitamos la tarea <Sacar al perro>");
-        removeTask(arrayList, "Sacar al perro");
-        System.out.println("Mostramos toda la lista; " + arrayList);
+        listaTareas.removeTask("Sacar al perro");
+        //System.out.println("Mostramos toda la lista con las tareas añadidas: " + listaTareas);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Completamos la tarea <Arreglar televisor>");
-        completeTask(arrayList, "Arreglar televisor");
-        System.out.println("Mostramos toda la lista; " + arrayList);
+        listaTareas.completeTask("Arreglar televisor");
+        //System.out.println("Mostramos toda la lista con las tareas añadidas: " + listaTareas);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Pasamos la lista a un array y lo pintamos");
-        System.out.println(Arrays.toString(arrayList.toArray()));
+        String[] conversionArray = listaTareas.getTasks();
+        System.out.println(Arrays.toString(conversionArray));
 
     }
 }

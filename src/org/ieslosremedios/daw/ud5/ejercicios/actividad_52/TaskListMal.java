@@ -2,23 +2,8 @@ package org.ieslosremedios.daw.ud5.ejercicios.actividad_52;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
-public class BIENTaskList {
-
-    private List<String> lista;
-
-    public BIENTaskList(String tipo){
-        if (tipo == "ArrayList"){
-            ArrayList arrayList = new ArrayList<>();
-        }
-        else if (tipo == "LinkedList"){
-            LinkedList linkedList = new LinkedList<>();
-        }
-    }
-
-
-
+public class TaskListMal {
     public static void addTask(ArrayList list, String task){
         list.add(task);
         System.out.println("Se ha añadido la tarea <" + task + "> a la lista");
@@ -54,4 +39,6 @@ public class BIENTaskList {
         String[] array = (String[]) list.toArray();
         return array;
     }
+
+
 }
