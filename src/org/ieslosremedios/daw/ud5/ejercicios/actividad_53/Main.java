@@ -20,7 +20,7 @@ public class Main {
         //Primero vamos a hacer uso de un mapa que guardará los números del array como llave y las ocurrencias de estos como valor
         Map<Integer, Integer> mapaContador = new TreeMap<Integer, Integer>();
 
-        //Creamos un bucle que se ejecutará hasta recorrer el array
+        //Creamos un bucle que se ejecutará hasta recorrer todo el array
         for (int i = 0; i < numeros.length; i++)
         {
             //Guardamos en un variable de tipo int el número en la posición "i" del array
