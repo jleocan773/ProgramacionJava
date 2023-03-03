@@ -24,12 +24,13 @@ public class TaskList {
 
     public void removeTask(String taskToDelete){
         list.remove(taskToDelete);
-        System.out.println("Se ha eliminado la tarea <" + taskToDelete + "> a la lista");
+        System.out.println("Se ha eliminado la tarea <" + taskToDelete + "> de la lista");
     }
 
     public void completeTask(String taskToComplete){
         String taskCompleted = "COMPLETADA " + taskToComplete;
         list.set(list.indexOf(taskToComplete), taskCompleted);
+        System.out.println("Se ha completado la tarea <" + taskToComplete + "> de la lista");
     }
 
     public String[] getTasks(){
