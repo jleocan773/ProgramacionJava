@@ -45,8 +45,7 @@ public class Persona implements Comparable {
     //Método toString
     @Override
     public String toString() {
-        String definicion = this.nombre + " tiene " + this.edad + " años";
-        return definicion;
+        return this.nombre + " tiene " + this.edad + " años";
     }
 
     // compareTo Nombre
