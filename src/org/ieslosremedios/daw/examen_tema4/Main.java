@@ -1,6 +1,5 @@
-package org.ieslosremedios.daw.examen;
+package org.ieslosremedios.daw.examen_tema4;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
