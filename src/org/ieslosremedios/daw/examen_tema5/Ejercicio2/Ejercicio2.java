@@ -1,91 +1,84 @@
 package org.ieslosremedios.daw.examen_tema5.Ejercicio2;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
 
         // TODO: Lista original con todos los ficheros originales
-        List<Fichero> ficheros = new LinkedList<>();
+        ArrayList<Fichero> ficheros = new ArrayList<>();
 
-        Fichero fichero1 = new Fichero("hola.txt", 1000.0);
-        Fichero fichero2 = new Fichero("adios.dat", 1500.0);
-        Fichero fichero3 = new Fichero("ejercicio1.doc", 800.0);
-        Fichero fichero4 = new Fichero("ejercicio2.txt", 1200.0);
-        Fichero fichero5 = new Fichero("ejercicio2.odt", 2200.0);
-        Fichero fichero6 = new Fichero("cuentas.xls", 9300.0);
-        Fichero fichero7 = new Fichero("libros_nuevos.txt", 250.0);
-        Fichero fichero8 = new Fichero("contactos.cvs", 725.0);
-
-        ficheros.add(fichero1);
-        ficheros.add(fichero2);
-        ficheros.add(fichero3);
-        ficheros.add(fichero4);
-        ficheros.add(fichero5);
-        ficheros.add(fichero6);
-        ficheros.add(fichero7);
-        ficheros.add(fichero8);
-
-//        ficheros.add(new Fichero("hola.txt", 1000.0));
-//        ficheros.add(new Fichero("adios.dat", 1500.0));
-//        ficheros.add(new Fichero("ejercicio1.doc", 800.0));
-//        ficheros.add(new Fichero("ejercicio2.txt", 1200.0));
-//        ficheros.add(new Fichero("ejercicio2.odt", 2200.0));
-//        ficheros.add(new Fichero("cuentas.xls", 9300.0));
-//        ficheros.add(new Fichero("libros_nuevos.txt", 250.0));
-//        ficheros.add(new Fichero("contactos.cvs", 725.0));
-
+        ficheros.add(new Fichero("hola.txt", 1000.0));
+        ficheros.add(new Fichero("adios.dat", 1500.0));
+        ficheros.add(new Fichero("ejercicio1.doc", 800.0));
+        ficheros.add(new Fichero("ejercicio2.txt", 1200.0));
+        ficheros.add(new Fichero("ejercicio2.odt", 2200.0));
+        ficheros.add(new Fichero("cuentas.xls", 9300.0));
+        ficheros.add(new Fichero("libros_nuevos.txt", 250.0));
+        ficheros.add(new Fichero("contactos.cvs", 725.0));
 
         //TODO: Copia para no modificar la lista original. Ten en cuenta el tipo de implementación más adecuada porque vamos a hacer operaciones
         // de escritura con ella.
-        //Podemos hacer una copia si simplemente creamos una nueva lista y la igualamos a la que ya tenemos creada
-        //Esta copia será, por supuesto, del mismo tipo
-        List<Fichero> copiaLista = ficheros;
-
+        //Podemos crear una copia simplemente igualándola a una existente en el momento de declararla
+        ArrayList<Fichero> copiaFicheros = new ArrayList<>(ficheros);
 
         // TODO: Imprime la lista de ficheros ordenados por nombre descendentemente
-        copiaLista.sort(new ComparadorNombre().reversed());
-        System.out.println(copiaLista);
+        //Creamos un Comparador en el que decimos que el orden será por nombre descendentemente, es decir, desde la A hasta la Z
+        //Si quisiese mos invertir el orden simplemente usaríamos el método "reverse" que nos proporciona el Comparador
+        copiaFicheros.sort(new ComparadorNombre());
+        System.out.println(copiaFicheros);
 
         // TODO: Renombra la extensión de los .txt a .md
-        // Aquí iría otra expresión regular que comprueba que el final de los archivos acaba en .md (*.md$)
-        fichero1.setNombre("Hola.md");
-        fichero4.setNombre("ejercicio2.md");
-        fichero7.setNombre("libros_nuevos.md");
-        System.out.println(copiaLista);
+        //Para renombrar un fichero accedemos a la posición del índice de este con "get" y usamos el "setNombre" de Fichero para cambiarlo
+        copiaFicheros.get(5).setNombre("ejercicio2.md");
+        copiaFicheros.get(6).setNombre("hola.md");
+        copiaFicheros.get(7).setNombre("libros_nuevos.md");
+        System.out.println(copiaFicheros);
 
         // TODO: Elimina los ficheros que ocupen más de 1Kbyte y menos de 2Kbytes
+        //Para eliminar un archivo usamos el método "remove" y le decimos el índice de este, aquí hay que tener cuidado puesto que después de cada
+        //ejecución del método el tamaño de la lista va a cambiar, y  con este el índice de sus elementos
+        copiaFicheros.remove(0);
+        copiaFicheros.remove(4);
+        copiaFicheros.remove(4);
+        System.out.println(copiaFicheros);
 
-        //TODO: Imprime la lista de ficheros ordenados por tamaño ascendente
-        // el método compareTo de tamaño está comentado
-        copiaLista.sort(new ComparadorTamaño());
-        System.out.println(copiaLista);
+        // TODO: Imprime la lista de ficheros ordenados por tamaño ascendente
+        //Creamos un nuevo Comparador, esta vez ordena por el tamaño de los ficheros, del menor al mayor
+        copiaFicheros.sort(new ComparadorTamaño());
+        System.out.println(copiaFicheros);
 
         // TODO: Añade un nuevo fichero llamado "prueba.txt" en la posición penúltima
-        Fichero ficheroNuevo = new Fichero("prueba.cvs", 550.0);
-        copiaLista.add(copiaLista.size()-1, ficheroNuevo);
-        System.out.println(copiaLista);
+        //Para añadir un fichero usamos el método "add" y como lo queremos en la posición penúltima usamos el método size (que nos dará el tamaño de la lista)
+        //y le restamos una porque lo queremos en la penúltima, no la última
+        copiaFicheros.add(copiaFicheros.size() - 1, new Fichero("prueba.txt", 1500.00));
+        System.out.println(copiaFicheros);
 
         // TODO: Reemplaza el fichero "prueba.txt" por otro nuevo llamado "prueba2.txt"
-        Fichero ficheroReemplazo = new Fichero("prueba2.txt", 1725.0);
-        copiaLista.set(copiaLista.size()-1, ficheroReemplazo);
-        System.out.println(copiaLista);
+        //Para reemplazar usamos el método "set", como ahora le tenemos que decir cual sustituir en lugar del índice, es decir, empezamos en 1 y no en 0
+        // le restamos 2, puesto que el elemento que queremos sustituir está en la penúltima posición
+        copiaFicheros.set(copiaFicheros.size() - 2, new Fichero("prueba2.txt", 5000.00));
+        System.out.println(copiaFicheros);
 
         // TODO: Cuenta cuántos ficheros con extensión .md existen
-        Iterator it = copiaLista.listIterator();
-        int contador = 0;
-        //Aquí iría la condición con una expresión regular de que el archivo acabe en .md que sería algo como *.md$
-        //pero no me da tiempo hacerlo
-        while(it.hasNext()){
-            if (it.next() == "Hola.md"){
-                contador++;
-            }
-            System.out.println(contador);
-        }
+        //Aquí habría que usar un iterator y recorrer la lista comprobando que el nombre concuerde con una expresión regular como "md$" para indicar que queremos
+        //contar solo los archivos que terminan en md
+        //Pero no me da tiempo a terminarlo :(
+//        ListIterator listIterator = copiaFicheros.listIterator();
+//        while (listIterator.hasNext()){
+//            if (listIterator.next().get)
+//        }
+
+
+        //Ejecutamos el método de abajo
+        ls(ficheros);
+
     }
 
     /**
-     * Lista los ficheros por, cada uno en una línea, con su nombre y tamaño. Ej.:
+     * Lista los ficheros por, cada uno en una línea, con su nombre y tamaño. Ej:
      * Nombre     Tamaño
      * ------     ------
      * libros_nuevos.txt   250.0
@@ -99,7 +92,15 @@ public class Ejercicio2 {
      * @param ficheros La lista de ficheros
      */
     static void ls (List<Fichero> ficheros) {
-
+        //Pintamos la cabecera
+        System.out.println("Nombre            Tamaño");
+        System.out.println("------            ------");
+        //Creamos un iterador para recorrer la lista
+        ListIterator<Fichero> listIterator = ficheros.listIterator();
+        //Mientras que siga teniendo un elemento siguiente, mostraremos el nombre de ese elemento, unos cuantos espacios y su tamaño
+        while(listIterator.hasNext()){
+            Fichero fichero = listIterator.next();
+            System.out.println(fichero.getNombre() + "          " + fichero.getTamaño());
+        }
     }
-
 }

@@ -12,6 +12,4 @@ public class ComparadorNombre implements Comparator<Fichero> {
     public Comparator<Fichero> reversed() {
         return Comparator.super.reversed();
     }
-
-
 }
