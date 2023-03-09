@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.examen_tema5.Ejercicio1;
+package org.ieslosremedios.daw.examen_tema5.ejercicio1;
 
 import java.util.Arrays;
 import java.util.TreeSet;

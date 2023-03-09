@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.examen_tema5.Ejercicio3;
+package org.ieslosremedios.daw.examen_tema5.ejercicio3;
 
 import java.util.Map;
 import java.util.TreeMap;
