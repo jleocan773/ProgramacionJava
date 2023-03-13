@@ -3,16 +3,20 @@ package org.ieslosremedios.daw.ud6.ejercicios.actividad6_2;
 public class Main {
     public static void main(String[] args) {
         //Ejercicio 1
-        cuentaAtrasRecursiva(5);
+        System.out.printf("Cuenta atrás desde el número 5: ");cuentaAtrasRecursiva(5);
         System.out.println();
 
         //Ejercicio 2
+        System.out.printf("Suma de los 6 primeros números: ");
         System.out.println(sumaRecursiva(6));
 
         //Ejercicio 3
+        System.out.printf("Número en la posición 7 de Fibonnaci: ");
         System.out.println(fibonnaciRecursivo(7));
 
         //Ejercicio 4
+        System.out.printf("Máximo común divisor de 16 y 160: ");
+        System.out.println(maximoComunDivisorRecursivo(16, 160));
 
     }
 
@@ -28,7 +32,7 @@ public class Main {
         if (i == 1) {
             return 1;
         }
-        return resultado += sumaRecursiva(i - 1);
+        return resultado + sumaRecursiva(i - 1);
     }
 
     private static int fibonnaciRecursivo(int posicion){
@@ -37,4 +41,11 @@ public class Main {
         }
         return fibonnaciRecursivo(posicion - 2) + fibonnaciRecursivo(posicion - 1);
     }
+
+    public static int maximoComunDivisorRecursivo(int a, int b) {
+        if (b == 0) return a;
+        return maximoComunDivisorRecursivo(b, a % b);
+    }
+
+
 }
