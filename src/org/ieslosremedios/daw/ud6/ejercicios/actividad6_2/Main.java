@@ -32,6 +32,9 @@ public class Main {
         if (i == 1) {
             return 1;
         }
+        else if (i == 0){
+            return 0;
+        }
         return resultado + sumaRecursiva(i - 1);
     }
 

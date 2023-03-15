@@ -1,6 +1,7 @@
 package org.ieslosremedios.daw.examen_tema5.Ejercicio2;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -28,6 +29,7 @@ public class Ejercicio2 {
         //Creamos un Comparador en el que decimos que el orden será por nombre descendentemente, es decir, desde la A hasta la Z
         //Si quisiese mos invertir el orden simplemente usaríamos el método "reverse" que nos proporciona el Comparador
         copiaFicheros.sort(new ComparadorNombre());
+        copiaFicheros.sort(Comparator.reverseOrder());
         System.out.println(copiaFicheros);
 
         // TODO: Renombra la extensión de los .txt a .md
