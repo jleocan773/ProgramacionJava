@@ -28,14 +28,13 @@ public class Main {
     }
 
     private static int sumaRecursiva(int i) {
-        int resultado = i;
         if (i == 1) {
             return 1;
         }
         else if (i == 0){
             return 0;
         }
-        return resultado + sumaRecursiva(i - 1);
+        return i + sumaRecursiva(i - 1);
     }
 
     private static int fibonnaciRecursivo(int posicion){
