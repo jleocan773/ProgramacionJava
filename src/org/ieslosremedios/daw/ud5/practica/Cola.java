@@ -1,82 +1,43 @@
 package org.ieslosremedios.daw.ud5.practica;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Cola {
-    public static void main(String[] args) {
-        //Creamos una LinkedList porque guarda los elementos (en nuestro caso guarda Personas) en orden de inserción
-        Queue<Persona> colaPersonas = new PriorityQueue<>();
+    private List cola = new LinkedList<>();
 
-        //Añadimos personas nueva y pintamos la cola de nuevo
-        System.out.print("Añadimos personas: ");
-        encolar(colaPersonas, "Ana");
-        encolar(colaPersonas, "Berto");
-        encolar(colaPersonas, "Cristina");
-        encolar(colaPersonas, "Daniel");
-        encolar(colaPersonas, "Zoe");
-        encolar(colaPersonas, "Luis");
-        System.out.println(colaPersonas);
-
-        //Quitamos una persona y pintamos la cola de nuevo
-        System.out.print("Quitamos la persona en la primera posición, es decir, Ana: ");
-        desencolar(colaPersonas);
-        System.out.println(colaPersonas);
-
-        //Pintamos el primer elemento de la cola
-        System.out.print("Pintamos a la primera persona, que tras la eliminación de Ana será Berto: ");
-        frente(colaPersonas);
-
-        //Pintamos el resto de la cola
-        System.out.print("Pintamos todos los elementos menos el primero, es decir, no pintamos Berto: ");
-        resto(colaPersonas);
-
-        //Vaciamos la cola
-        System.out.print("\nLimpiamos la cola: ");
-        limpiar(colaPersonas);
-        System.out.println(colaPersonas);
-
-        //Comprobamos que la cola esté vacía
-        System.out.print("Comprobamos si la cola está vacía: ");
-        System.out.println(esVacia(colaPersonas));
-
-        //Pintamos la longitud de la cola
-        System.out.print("Pintamos la longitud de la cola: ");
-        longitud(colaPersonas);
-
+    public void encolar(Object elemento){
+        cola.add(elemento);
     }
 
-    private static void encolar(Queue colaPersonas, String nombreParaIntroducir){
-        colaPersonas.offer(new Persona(nombreParaIntroducir));
+    public void desencolar(Object elemento){
+        cola.remove(elemento);
     }
 
-    private static void desencolar(Queue colaPersonas){
-        colaPersonas.remove();
+    public void frente(){
+        System.out.println(cola.get(0));;
     }
 
-    private static void frente(Queue colaPersonas){
-        System.out.println(colaPersonas.peek());
-    }
-
-    private static void resto (Queue colaPersonas){
-        colaPersonas.remove();
-        while(!colaPersonas.isEmpty()){
-            System.out.print(colaPersonas.poll() + " ");
+    public void resto (){
+        for(int i = 1; i < cola.size(); i++){
+            System.out.print(cola.get(i) + " ");
         }
     }
 
-    private static void limpiar (Queue colaPersonas){
-        colaPersonas.clear();
+    public void limpiar (){
+        cola.clear();
     }
 
-    private static boolean esVacia (Queue colaPersonas){
-        if (colaPersonas.isEmpty() == true){
-            return true;
-        }
-        else return false;
+    public boolean esVacia (){
+        return cola.isEmpty() == true;
     }
 
-    private static void longitud (Queue colaPersonas){
-        System.out.println(colaPersonas.size());
+    public void longitud (){
+        System.out.println(cola.size());
+    }
+
+    @Override
+    public String toString() {
+        return cola.toString();
     }
 }
