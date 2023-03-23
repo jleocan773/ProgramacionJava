@@ -25,7 +25,7 @@ public class Pila {
     }
 
     public boolean esVacia(){
-        return pila.isEmpty() == true;
+        return pila.isEmpty();
     }
 
     public void longitud(){

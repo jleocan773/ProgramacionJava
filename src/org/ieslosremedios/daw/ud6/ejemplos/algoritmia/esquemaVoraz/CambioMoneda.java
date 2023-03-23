@@ -8,10 +8,6 @@ public class CambioMoneda extends EsquemaVoraz{
     int[] monedas;
     int cambio;
 
-    //Atributos del algoritmo
-    int[] solucion;
-    int candidato;
-    int etapa;
 
     public CambioMoneda(int[] monedas, int cambio) {
         this.monedas = monedas;

@@ -27,7 +27,7 @@ public class Main {
 
         //Quitamos una persona y pintamos la cola de nuevo
         System.out.print("Quitamos la persona Ana: ");
-        colaPersonas.desencolar(ana);
+        colaPersonas.desencolar();
         System.out.println(colaPersonas);
 
         //Pintamos el primer elemento de la cola

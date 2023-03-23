@@ -10,9 +10,7 @@ public class Cola {
         cola.add(elemento);
     }
 
-    public void desencolar(Object elemento){
-        cola.remove(elemento);
-    }
+    public void desencolar(){ cola.remove(0); }
 
     public void frente(){
         System.out.println(cola.get(0));;
@@ -29,7 +27,7 @@ public class Cola {
     }
 
     public boolean esVacia (){
-        return cola.isEmpty() == true;
+        return cola.isEmpty();
     }
 
     public void longitud (){
