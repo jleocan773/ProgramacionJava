@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud6.práctica6.ej1;
+package org.ieslosremedios.daw.ud6.practica.ej1;
 
 public class Main {
     public static void main(String[] args) {
