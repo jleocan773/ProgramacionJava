@@ -1,5 +1,7 @@
 package org.ieslosremedios.daw.ud7.ejemplos;
 
+import org.ieslosremedios.daw.examen_tema5.Ejercicio2.Fichero;
+
 import java.io.*;
 
 public class EjemploFileYOperaciones {
@@ -45,6 +47,7 @@ public class EjemploFileYOperaciones {
             //Abrir un Fichero en modo binario y leer
             FileInputStream fis = new FileInputStream(miFichero);
             System.out.println("\n" +new String (fis.readAllBytes()));
+
 
         }
         catch (IOException e){
