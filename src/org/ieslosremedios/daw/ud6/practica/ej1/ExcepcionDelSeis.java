@@ -5,3 +5,4 @@ public class ExcepcionDelSeis extends Exception{
         super(mensaje);
     }
 }
+
