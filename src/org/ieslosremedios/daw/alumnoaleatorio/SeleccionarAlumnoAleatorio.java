@@ -1,43 +1,52 @@
 package org.ieslosremedios.daw.alumnoaleatorio;
+import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class SeleccionarAlumnoAleatorio {
     public static void main(String[] args) {
-         Alumno Pablo = new Alumno("Pablo Mateos Palas", 0),
-                David = new Alumno("David Gutierrez Perez",0),
-                JuanMaria = new Alumno("Juan María Mateos Ponce", 0),
-                Jossie = new Alumno("Jossie Allisson Yovera Consuelo",  0),
-                Victor = new Alumno("Victor Chacón Calle", 0),
-                Jose = new Alumno("José Ramirez Sanchez", 0),
-                Jorge = new Alumno("Jorge Coronil Villalba", 0),
-                Ricardo = new Alumno("Ricardo Gabriel Moreno Cantea", 0),
-                Adrian = new Alumno("Adrián Merino Gamaza", 0),
-                JuanManuelH = new Alumno("Juan Manuel Herrera Ramírez", 0),
-                DanielAlfonso = new Alumno("Daniel Alfonso Rodríguez Santos", 0),
-                Diego = new Alumno("Diego González Romero", 0),
-                Jonathan = new Alumno("Jonathan León Canto", 0),
-                JuanManuelS = new Alumno("Juan Manuel Saborido Baena", 0),
-                Julian = new Alumno("Julian García Velázquez", 0),
-                JoseAntonio = new Alumno("Jose Antonio Jaén Gómez", 0),
-                AntonioJesus = new Alumno("Antonio Jesús Téllez Perdigones", 0);
+         Estudiante Pablo = new Estudiante("Pablo Mateos Palas", 0),
+                JuanMaria = new Estudiante("Juan María Mateos Ponce", 0),
+                Victor = new Estudiante("Victor Chacón Calle", 0),
+                Jose = new Estudiante("José Ramirez Sanchez", 0),
+                Jorge = new Estudiante("Jorge Coronil Villalba", 0),
+                Ricardo = new Estudiante("Ricardo Gabriel Moreno Cantea", 0),
+                Adrian = new Estudiante("Adrián Merino Gamaza", 0),
+                JuanManuelH = new Estudiante("Juan Manuel Herrera Ramírez", 0),
+                DanielAlfonso = new Estudiante("Daniel Alfonso Rodríguez Santos", 0),
+                Diego = new Estudiante("Diego González Romero", 0),
+                Jonathan = new Estudiante("Jonathan León Canto", 0),
+                JuanManuelS = new Estudiante("Juan Manuel Saborido Baena", 0),
+                Julian = new Estudiante("Julian García Velázquez", 0),
+                JoseAntonio = new Estudiante("Jose Antonio Jaén Gómez", 0),
+                AntonioJesus = new Estudiante("Antonio Jesús Téllez Perdigones", 0);
 
-         Alumno[] alumnos = {Pablo, David, JuanMaria, Jossie, Victor, Jose, Jorge, Ricardo, Adrian, JuanManuelH, DanielAlfonso, Diego, Jonathan, JuanManuelS, Julian, JoseAntonio, AntonioJesus};
+         Estudiante[] estudiantes = {Pablo, JuanMaria, Victor, Jose, Jorge, Ricardo, Adrian, JuanManuelH, DanielAlfonso, Diego, Jonathan, JuanManuelS, Julian, JoseAntonio, AntonioJesus};
+         //seleccionarAleatorio(estudiantes);
 
-         seleccionarAleatorio(alumnos);
+        List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
+        listaEstudiantes.add(Pablo);
+        listaEstudiantes.add(JuanMaria);
+        listaEstudiantes.add(Jose);
+        System.out.println(listaEstudiantes);
+        Pablo.participacion +=1;
+        System.out.println(listaEstudiantes);
+        Pablo.participacion +=1;
+        System.out.println(listaEstudiantes);
     }
 
-    public static void seleccionarAleatorio(Alumno[] alumnos) {
+    public static void seleccionarAleatorio(Estudiante[] estudiantes) {
         Random random = new Random();
-        int elegido = random.nextInt(alumnos.length);
+        int elegido = random.nextInt(estudiantes.length);
 
-        if (alumnos[elegido].participacion > 0) {
-            elegido = random.nextInt(alumnos.length);
-            System.out.println(alumnos[elegido]);
+        if (estudiantes[elegido].participacion > 0) {
+            elegido = random.nextInt(estudiantes.length);
+            System.out.println(estudiantes[elegido]);
 
         }
-        else System.out.println(alumnos[elegido]);
-        alumnos[elegido].participacion++;
+        else System.out.println(estudiantes[elegido]);
+        estudiantes[elegido].participacion++;
     }
 }

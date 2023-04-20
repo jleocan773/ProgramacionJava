@@ -1,7 +1,5 @@
 package org.ieslosremedios.daw.aaa_clases_universales;
 
-import org.ieslosremedios.daw.ud7.tareas_clase.PersonaParaEjec10;
-
 import java.io.Serializable;
 
 public class Persona implements Serializable {
@@ -10,6 +8,7 @@ public class Persona implements Serializable {
     public int edad;
     public Persona padre;
     public Direccion direccion;
+
 
     public Persona(String nombre, String apellidos,  int edad, Persona padre, Direccion direccion) {
         this.nombre = nombre;
