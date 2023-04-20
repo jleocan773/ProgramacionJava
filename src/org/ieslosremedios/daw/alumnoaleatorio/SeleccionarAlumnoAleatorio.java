@@ -1,13 +1,16 @@
 package org.ieslosremedios.daw.alumnoaleatorio;
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class SeleccionarAlumnoAleatorio {
-    public static void main(String[] args) {
-         Estudiante Pablo = new Estudiante("Pablo Mateos Palas", 0),
+    public static void main(String[] args) throws IOException {
+        Estudiante Pablo = new Estudiante("Pablo Mateos Palas", 0),
                 JuanMaria = new Estudiante("Juan María Mateos Ponce", 0),
                 Victor = new Estudiante("Victor Chacón Calle", 0),
                 Jose = new Estudiante("José Ramirez Sanchez", 0),
@@ -23,30 +26,45 @@ public class SeleccionarAlumnoAleatorio {
                 JoseAntonio = new Estudiante("Jose Antonio Jaén Gómez", 0),
                 AntonioJesus = new Estudiante("Antonio Jesús Téllez Perdigones", 0);
 
-         Estudiante[] estudiantes = {Pablo, JuanMaria, Victor, Jose, Jorge, Ricardo, Adrian, JuanManuelH, DanielAlfonso, Diego, Jonathan, JuanManuelS, Julian, JoseAntonio, AntonioJesus};
-         //seleccionarAleatorio(estudiantes);
-
         List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
-        listaEstudiantes.add(Pablo);
-        listaEstudiantes.add(JuanMaria);
-        listaEstudiantes.add(Jose);
+        listaEstudiantes.add(DanielAlfonso);
+        listaEstudiantes.add(JuanManuelH);
+        listaEstudiantes.add(Jonathan);
+
         System.out.println(listaEstudiantes);
-        Pablo.participacion +=1;
-        System.out.println(listaEstudiantes);
-        Pablo.participacion +=1;
-        System.out.println(listaEstudiantes);
+        //crearFicheroEstudiantes(listaEstudiantes);
+        System.out.println(seleccionarAleatorio(listaEstudiantes));
     }
 
-    public static void seleccionarAleatorio(Estudiante[] estudiantes) {
+
+    public static void crearFicheroEstudiantes(List<Estudiante> listaEstudiantes) throws IOException {
+        File ficheroDeEstudiantes = new File("C:\\Users\\LionPride\\Desktop\\Instituto\\Java\\estudiantes.txt");
+        FileWriter fw = new FileWriter(ficheroDeEstudiantes);
+        fw.write(listaEstudiantes.toString());
+        fw.close();
+    }
+
+    public static Estudiante seleccionarAleatorio(List<Estudiante> estudiantes) throws IOException {
         Random random = new Random();
-        int elegido = random.nextInt(estudiantes.length);
+        int elegido = random.nextInt(estudiantes.size());
 
-        if (estudiantes[elegido].participacion > 0) {
-            elegido = random.nextInt(estudiantes.length);
-            System.out.println(estudiantes[elegido]);
-
+        if (estudiantes.get(elegido).participacion > 0) {
+            elegido = random.nextInt(estudiantes.size());
+            System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).participacion);
+            FileWriter fw = new FileWriter("C:\\Users\\LionPride\\Desktop\\Instituto\\Java\\estudiantes.txt");
+            fw.write(estudiantes.toString());
+            fw.close();
+            return estudiantes.get(elegido);
         }
-        else System.out.println(estudiantes[elegido]);
-        estudiantes[elegido].participacion++;
+        else  estudiantes.get(elegido).participacion++;
+        System.out.println("Se ha elegido a " + estudiantes.get(elegido).nombre + " ahora su participación es " + estudiantes.get(elegido).participacion);
+        FileWriter fw = new FileWriter("C:\\Users\\LionPride\\Desktop\\Instituto\\Java\\estudiantes.txt");
+        fw.write(estudiantes.toString());
+        fw.close();
+        return (estudiantes.get(elegido));
     }
+
+
+
+
 }

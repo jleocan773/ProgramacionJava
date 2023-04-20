@@ -1,6 +1,8 @@
 package org.ieslosremedios.daw.aaa_clases_universales;
 
-public class Estudiante extends Persona{
+import java.io.Serializable;
+
+public class Estudiante extends Persona implements Serializable {
     public int participacion;
 
     public Estudiante(String nombre, String apellidos, int participacion){
