@@ -29,7 +29,7 @@ public class Pruebas {
                 AntonioJesus = new Estudiante("Antonio Jesús Téllez Perdigones", 0);
 
 
-        final String ruta = "C:\\Users\\LionPride\\Desktop\\Instituto\\Java\\estudiantes.txt";
+        final String ruta = "C:\\Users\\1DAW_2223_01\\Desktop\\Programación\\Unidad-7\\estudiantes.txt";
         List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
         listaEstudiantes.add(DanielAlfonso);
         listaEstudiantes.add(JuanManuelH);
@@ -68,6 +68,10 @@ public class Pruebas {
         Random random = new Random();
         int elegido = random.nextInt(estudiantes.size());
 
+        //Aquí queda por cambiar el número 50 por la mayor participación que haya en la lista
+        //O sea, hay que recorrer la lista, guardar la participación del primer estudiante en una variable y compararla
+        //con el resto de valores de la participación del resto de estudiantes, cambiando el valor de la variable si se
+        //encuentra un valor mayor
         if (estudiantes.get(elegido).participacion > 50) {
             elegido = random.nextInt(estudiantes.size());
             System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).participacion);

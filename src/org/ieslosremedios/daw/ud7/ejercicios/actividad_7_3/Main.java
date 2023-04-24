@@ -2,7 +2,6 @@ package org.ieslosremedios.daw.ud7.ejercicios.actividad_7_3;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Direccion;
 import org.ieslosremedios.daw.aaa_clases_universales.Persona;
-import org.ieslosremedios.daw.ud7.tareas_clase.PersonaParaEjec10;
 
 import java.io.*;
 

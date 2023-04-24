@@ -18,6 +18,12 @@ public class Persona implements Serializable {
         this.direccion = direccion;
     }
 
+    public Persona(String nombre, String apellidos, Direccion direccion) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.direccion = direccion;
+    }
+
     public Persona(String nombre, String apellidos, int edad) {
         this.nombre = nombre;
         this.apellidos = apellidos;

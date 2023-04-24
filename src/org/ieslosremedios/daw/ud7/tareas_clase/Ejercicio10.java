@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Ejercicio10 {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        PersonaParaEjec10 personaMisteriosa = new PersonaParaEjec10();
+        Ej10Per personaMisteriosa = new Ej10Per();
 
         FileOutputStream fos = new FileOutputStream("C:\\Users\\1DAW_2223_01\\Desktop\\Programación\\Unidad-7\\personaMisteriosa.bin");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -20,7 +20,7 @@ public class Ejercicio10 {
         //FileInputStream fis = new FileInputStream("C:\\Users\\1DAW_2223_01\\Desktop\\Programación\\Unidad-7\\personadelcompañero.bin");
         //ObjectInputStream ois = new ObjectInputStream(fis);
 
-        PersonaParaEjec10 quienEsLaPersona = (PersonaParaEjec10) ois.readObject();
+        Ej10Per quienEsLaPersona = (Ej10Per) ois.readObject();
 
         System.out.println("Nombre: " + quienEsLaPersona.nombre);
         System.out.println("Apellido: " + quienEsLaPersona.apellido);
