@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<contactos>
+    <contacto>
+        <nombre>Primera</nombre>
+        <apellidos>Persona Falsa</apellidos>
+        <direccion>Aquí vive la Primera Persona</direccion>
+    </contacto>
+    <contacto>
+        <nombre>Segunda</nombre>
+        <apellidos>Persona Falsa</apellidos>
+        <direccion>Aquí vive la Segunda Persona</direccion>
+    </contacto>
+    <contacto>
+        <nombre>Tercera</nombre>
+        <apellidos>Persona Falsa</apellidos>
+        <direccion>Aquí vive la Tercera Persona</direccion>
+    </contacto>
+</contactos>
