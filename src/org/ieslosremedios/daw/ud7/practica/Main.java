@@ -1,11 +1,11 @@
-package org.ieslosremedios.daw.alumnoaleatorio;
+package org.ieslosremedios.daw.ud7.practica;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 
 import java.io.*;
 import java.util.*;
 
-public class Pruebas {
+public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Estudiante Pablo = new Estudiante("Pablo Mateos Palas", 0),
                 JuanMaria = new Estudiante("Juan María Mateos Ponce", 0),
@@ -23,6 +23,7 @@ public class Pruebas {
                 JoseAntonio = new Estudiante("Jose Antonio Jaén Gómez", 0),
                 AntonioJesus = new Estudiante("Antonio Jesús Téllez Perdigones", 0);
 
+
         final String ruta = "C:\\Users\\1DAW_2223_01\\Desktop\\Programación\\Unidad-7\\estudiantes.txt";
         List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
         listaEstudiantes.add(DanielAlfonso);
@@ -34,6 +35,16 @@ public class Pruebas {
         //crearFicheroEstudiantes(listaEstudiantes, ruta);
         //System.out.println(leerFicheroEstudiantes(ruta));
         //System.out.println(seleccionarAleatorio(listaEstudiantes, ruta));
+    }
+
+
+    public static void crearFicheroEstudiantes(List<Estudiante> listaEstudiantes, String ruta) throws IOException {
+        FileOutputStream writeData = new FileOutputStream(ruta);
+        ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
+
+        writeStream.writeObject(listaEstudiantes);
+        writeStream.flush();
+        writeStream.close();
     }
 
     public static List<Estudiante> leerFicheroEstudiantes(String ruta) throws IOException, ClassNotFoundException {

@@ -34,6 +34,7 @@ public class SeleccionarAlumnoAleatorio {
         System.out.println(listaEstudiantes);
         //crearFicheroEstudiantes(listaEstudiantes);
         System.out.println(seleccionarAleatorio(listaEstudiantes));
+
     }
 
 

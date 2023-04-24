@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<estudiantes>
+    <estudiante>
+        <nombre>Daniel Alfonso Rodríguez Santos</nombre>
+        <participación>0</participación>
+    </estudiante>
+    <estudiante>
+        <nombre>Juan Manuel Herrera Ramírez</nombre>
+        <participación>0</participación>
+    </estudiante>
+    <estudiante>
+        <nombre>Jonathan León Canto</nombre>
+        <participación>0</participación>
+    </estudiante>
+</estudiantes>

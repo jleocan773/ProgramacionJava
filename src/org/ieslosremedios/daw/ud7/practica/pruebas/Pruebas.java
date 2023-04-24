@@ -1,9 +1,11 @@
-package org.ieslosremedios.daw.alumnoaleatorio;
+package org.ieslosremedios.daw.ud7.practica.pruebas;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Pruebas {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
