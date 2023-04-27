@@ -3,7 +3,7 @@ package org.ieslosremedios.daw.aaa_clases_universales;
 import java.io.Serializable;
 
 public class Estudiante extends Persona implements Serializable {
-    public int participacion;
+    private int participacion;
 
     public Estudiante(String nombre, String apellidos, int participacion){
         this.nombre = nombre;

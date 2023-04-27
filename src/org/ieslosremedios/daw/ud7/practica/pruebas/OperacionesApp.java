@@ -4,7 +4,9 @@ import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
@@ -13,10 +15,13 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 
-public class ExportarXML {
+public class OperacionesApp {
+
 
     public static void exportarXML(List<Estudiante> listaEstudiantes, String rutaParaExportar) throws ParserConfigurationException, TransformerException {
         // Creamos el documento vacío para añadirle a continuación los nodos
@@ -78,7 +83,48 @@ public class ExportarXML {
 
         // Se realiza la transformación, de Document a Fichero.
         transformer.transform(source, result);
+    }
 
+    public static void importarXML(String rutaLectura, String rutaEscritura) throws IOException, SAXException, ParserConfigurationException, TransformerException {        // Cargamos fichero que vamos a leer
+        //Cargamos fichero que vamos a leer
+        File file = new File(rutaLectura);
+
+        //Parseamos el fichero al Document
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse(file);
+
+        //Clases necesarias para la creación del archivo XML
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(document);
+        StreamResult result = new StreamResult(new File(rutaEscritura));
+
+        //Transformación, de Document a Fichero.
+        transformer.transform(source, result);
+
+    }
+
+    public static Estudiante seleccionarAleatorio(List<Estudiante> estudiantes, String rutaParaEscribirFichero) throws IOException {
+        Random random = new Random();
+        int elegido = random.nextInt(estudiantes.size());
+
+        if (estudiantes.get(elegido).getParticipacion() > 50) {
+            elegido = random.nextInt(estudiantes.size());
+            estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
+            System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
+            FileWriter fw = new FileWriter(rutaParaEscribirFichero);
+            fw.write(estudiantes.toString());
+            fw.close();
+            return estudiantes.get(elegido);
+        }
+        else
+            estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
+            System.out.println("Se ha elegido a " + estudiantes.get(elegido).nombre + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
+            FileWriter fw = new FileWriter(rutaParaEscribirFichero);
+            fw.write(estudiantes.toString());
+            fw.close();
+            return (estudiantes.get(elegido));
     }
 
 }

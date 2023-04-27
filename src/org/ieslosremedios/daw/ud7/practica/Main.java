@@ -67,9 +67,9 @@ public class Main {
         //O sea, hay que recorrer la lista, guardar la participación del primer estudiante en una variable y compararla
         //con el resto de valores de la participación del resto de estudiantes, cambiando el valor de la variable si se
         //encuentra un valor mayor
-        if (estudiantes.get(elegido).participacion > 50) {
+        if (estudiantes.get(elegido).getParticipacion() > 50) {
             elegido = random.nextInt(estudiantes.size());
-            System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).participacion);
+            System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
 
             FileOutputStream writeData = new FileOutputStream(ruta);
             ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
@@ -80,8 +80,8 @@ public class Main {
 
             return estudiantes.get(elegido);
         }
-        else  estudiantes.get(elegido).participacion++;
-        System.out.println("Se ha elegido a " + estudiantes.get(elegido).nombre + " ahora su participación es " + estudiantes.get(elegido).participacion);
+        else
+        System.out.println("Se ha elegido a " + estudiantes.get(elegido).nombre + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
         FileOutputStream writeData = new FileOutputStream(ruta);
         ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
 
