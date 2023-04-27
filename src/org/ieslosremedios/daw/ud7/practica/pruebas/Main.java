@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main extends ImportarXML {
+public class Main extends ExportarXML {
     public static void main(String[] args) throws IOException, ParserConfigurationException, TransformerException {
         Estudiante JuanManuelH = new Estudiante("Juan Manuel Herrera Ramírez", 0),
                 DanielAlfonso = new Estudiante("Daniel Alfonso Rodríguez Santos", 0),
@@ -19,7 +19,7 @@ public class Main extends ImportarXML {
         listaEstudiantes.add(JuanManuelH);
         listaEstudiantes.add(Jonathan);
 
-        importarXML(listaEstudiantes);
+        exportarXML(listaEstudiantes);
 
 
 
