@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud7.practica.pruebas;
+package org.ieslosremedios.daw.ud7.practica.pruebas.paraentregar;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 import org.xml.sax.SAXException;
@@ -23,8 +23,9 @@ public class Main extends OperacionesApp {
         listaEstudiantes.add(Jonathan);
 
 
-        exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
-        //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/ficheroImportado.xml");
+        //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
+        //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/ficheroImportado.xml");
+        //TODO Aquí lo que falla es que no lee cada vez que se ejecuta el archivo XML que ya existe, por lo que no se guarda la participación
         //seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
 
     }

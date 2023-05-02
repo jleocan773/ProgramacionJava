@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud7.practica.pruebas;
+package org.ieslosremedios.daw.ud7.practica.pruebas.paraentregar;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 import org.w3c.dom.Document;
@@ -6,9 +6,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
