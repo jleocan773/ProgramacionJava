@@ -4,7 +4,6 @@ import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 import java.io.*;
 import java.util.*;
 
-import static org.ieslosremedios.daw.ud7.practica.Main.crearFicheroEstudiantes;
 
 public class Pruebas {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -60,7 +59,7 @@ public class Pruebas {
         if (estudiantes.get(elegido).getParticipacion() > 50) {
             elegido = random.nextInt(estudiantes.size());
             estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
-            System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
+            System.out.println("Se ha elegido a " + estudiantes.get(elegido).getNombre() + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
 
             FileOutputStream writeData = new FileOutputStream(ruta);
             ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
@@ -72,7 +71,7 @@ public class Pruebas {
             return estudiantes.get(elegido);
         }
         else estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
-        System.out.println("Se ha elegido a " + estudiantes.get(elegido).nombre + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
+        System.out.println("Se ha elegido a " + estudiantes.get(elegido).getNombre() + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
         FileOutputStream writeData = new FileOutputStream(ruta);
         ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
 

@@ -6,6 +6,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -80,26 +83,22 @@ public class OperacionesApp {
 
     }
 
-    public static Estudiante seleccionarAleatorio(List<Estudiante> estudiantes, String rutaParaEscribirFichero) throws IOException, ClassNotFoundException {
+    public static Estudiante seleccionarAleatorio(List<Estudiante> estudiantes, String rutaParaEscribirFichero) throws  ParserConfigurationException, TransformerException, JAXBException {
         Random random = new Random();
         int elegido = random.nextInt(estudiantes.size());
 
         if (estudiantes.get(elegido).getParticipacion() > 50) {
             elegido = random.nextInt(estudiantes.size());
             estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
-            System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
-            FileWriter fw = new FileWriter(rutaParaEscribirFichero);
-            fw.write(estudiantes.toString());
-            fw.close();
+            System.out.println("Se ha elegido a " + estudiantes.get(elegido).getNombre() + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
+            exportarXML(estudiantes, rutaParaEscribirFichero);
             return estudiantes.get(elegido);
         }
         else
             estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
-            System.out.println("Se ha elegido a " + estudiantes.get(elegido).nombre + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
-            FileWriter fw = new FileWriter(rutaParaEscribirFichero);
-            fw.write(estudiantes.toString());
-            fw.close();
-            return (estudiantes.get(elegido));
+            System.out.println("Se ha elegido a " + estudiantes.get(elegido).getNombre() + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
+            exportarXML(estudiantes, rutaParaEscribirFichero);
+        return (estudiantes.get(elegido));
     }
 
     public static List<Estudiante> leerFicheroEstudiantes(String ruta) throws IOException, ClassNotFoundException {

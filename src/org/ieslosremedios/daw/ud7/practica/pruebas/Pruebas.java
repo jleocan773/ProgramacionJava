@@ -43,7 +43,7 @@ public class Pruebas {
         if (estudiantes.get(elegido).getParticipacion() > 50) {
             elegido = random.nextInt(estudiantes.size());
             estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
-            System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
+            System.out.println("Se ha elegido a " + estudiantes.get(elegido).getNombre() + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
             FileWriter fw = new FileWriter(rutaParaEscribirFichero);
             fw.write(estudiantes.toString());
             fw.close();
@@ -51,7 +51,7 @@ public class Pruebas {
         }
         else
             estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
-        System.out.println("Se ha elegido a " + estudiantes.get(elegido).nombre + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
+        System.out.println("Se ha elegido a " + estudiantes.get(elegido).getNombre() + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
         FileWriter fw = new FileWriter(rutaParaEscribirFichero);
         fw.write(estudiantes.toString());
         fw.close();
