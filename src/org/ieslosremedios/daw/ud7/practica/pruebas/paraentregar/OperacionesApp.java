@@ -82,6 +82,8 @@ public class OperacionesApp {
     }
 
     public static Estudiante seleccionarAleatorio(List<Estudiante> estudiantes, String rutaParaEscribirFichero) throws  ParserConfigurationException, TransformerException, JAXBException {
+        //TODO Aquí habría que cargar el XML y convertirlo en una Lista, y asignarle al valor a la Lista introducida por parámetros la de la cargada
+
         Random random = new Random();
         int elegido = random.nextInt(estudiantes.size());
 
