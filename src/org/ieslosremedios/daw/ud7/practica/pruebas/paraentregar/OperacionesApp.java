@@ -100,13 +100,4 @@ public class OperacionesApp {
             exportarXML(estudiantes, rutaParaEscribirFichero);
         return (estudiantes.get(elegido));
     }
-
-    public static List<Estudiante> leerFicheroEstudiantes(String ruta) throws IOException, ClassNotFoundException {
-        FileInputStream readData = new FileInputStream(ruta);
-        ObjectInputStream readStream = new ObjectInputStream(readData);
-
-        ArrayList<Estudiante> estudiantes = (ArrayList<Estudiante>) readStream.readObject();
-        readStream.close();
-        return estudiantes;
-    }
 }

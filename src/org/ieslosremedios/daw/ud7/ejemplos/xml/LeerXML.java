@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud7.practica.pruebas;
+package org.ieslosremedios.daw.ud7.ejemplos.xml;
 
 
 import org.w3c.dom.Document;
