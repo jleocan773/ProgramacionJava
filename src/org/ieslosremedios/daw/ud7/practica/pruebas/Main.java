@@ -21,19 +21,11 @@ public class Main extends OperacionesApp {
                 DanielAlfonso = new Estudiante("Daniel Alfonso Rodríguez Santos", 0),
                 Jonathan = new Estudiante("Jonathan León Canto", 0);
 
-//        List<Estudiante> listaEstudiantes = new ArrayList<>();
-//        listaEstudiantes.add(DanielAlfonso);
-//        listaEstudiantes.add(JuanManuelH);
-//        listaEstudiantes.add(Jonathan);
+        List<Estudiante> listaEstudiantes = new ArrayList<>();
+        listaEstudiantes.add(DanielAlfonso);
+        listaEstudiantes.add(JuanManuelH);
+        listaEstudiantes.add(Jonathan);
 
-        File file = new File("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
-        JAXBContext jaxbContext = JAXBContext.newInstance(Estudiante.class);
-        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-        Estudiantes estudiantes = (Estudiantes) jaxbUnmarshaller.unmarshal(file);
-        List<Estudiante> listaEstudiantes = estudiantes.getEstudiantes();
-        for (Estudiante e : listaEstudiantes) {
-            System.out.println(e);
-        }
 
         //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/ficheroImportado.xml");
