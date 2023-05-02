@@ -1,15 +1,11 @@
 package org.ieslosremedios.daw.ud7.practica.pruebas;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
-import org.ieslosremedios.daw.aaa_clases_universales.Estudiantes;
 import org.xml.sax.SAXException;
 
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +23,7 @@ public class Main extends OperacionesApp {
         listaEstudiantes.add(Jonathan);
 
 
-        //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/ficheroImportado.xml");
         //seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
 

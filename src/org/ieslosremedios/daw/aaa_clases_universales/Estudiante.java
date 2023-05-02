@@ -6,7 +6,6 @@ import java.io.Serializable;
 
 public class Estudiante extends Persona implements Serializable {
     private int participacion;
-    private String nombre;
 
     public Estudiante(String nombre, String apellidos, int participacion){
         this.nombre = nombre;
