@@ -13,11 +13,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 public class ExportarXML {
-
     public static void exportarXML(List<Estudiante> listaEstudiantes, String rutaParaExportar) throws ParserConfigurationException, TransformerException {
         // Creamos el documento vacío para añadirle a continuación los nodos
         Document document = DocumentBuilderFactory.newDefaultInstance().newDocumentBuilder().newDocument();
@@ -27,58 +25,33 @@ public class ExportarXML {
         // Hacemos que cuelgue del documento (estructura de árbol)
         document.appendChild(estudiantes);
 
-        // Creamos el primer nodo y lo colgamos de su padre, el nodo raíz. --> estudiantes
-        Element estudiante1 = document.createElement("estudiante");
-        estudiantes.appendChild(estudiante1);
 
-        Element nombreEstudiante1 = document.createElement("nombre");
-        estudiante1.appendChild(nombreEstudiante1);
-        Element apellidosEstudiante1 = document.createElement("participación");
-        estudiante1.appendChild(apellidosEstudiante1);
+        for (int i = 0; i < listaEstudiantes.size(); i++) {
+            Estudiante estudiante = listaEstudiantes.get(i);
+            Element estudianteElement = document.createElement("estudiante");
+            estudiantes.appendChild(estudianteElement);
 
-        Text textNombreEstudiante1 = document.createTextNode(listaEstudiantes.get(0).getNombre());
-        nombreEstudiante1.appendChild(textNombreEstudiante1);
-        Text textParticipacionEstudiante1 = document.createTextNode(String.valueOf(listaEstudiantes.get(0).getParticipacion()));
-        apellidosEstudiante1.appendChild(textParticipacionEstudiante1);
+            Element nombreEstudiante = document.createElement("nombre");
+            estudianteElement.appendChild(nombreEstudiante);
+            Text textNombreEstudiante = document.createTextNode(estudiante.getNombre());
+            nombreEstudiante.appendChild(textNombreEstudiante);
 
-        // Creamos el segundo nodo y lo colgamos de su padre, el nodo raíz. --> estudiantes
-        Element estudiante2 = document.createElement("estudiante");
-        estudiantes.appendChild(estudiante2);
-
-        Element nombreEstudiante2 = document.createElement("nombre");
-        estudiante2.appendChild(nombreEstudiante2);
-        Element apellidosEstudiante2 = document.createElement("participación");
-        estudiante2.appendChild(apellidosEstudiante2);
-
-        Text textNombreEstudiante2 = document.createTextNode(listaEstudiantes.get(1).getNombre());
-        nombreEstudiante2.appendChild(textNombreEstudiante2);
-        Text textParticipacionEstudiante2 = document.createTextNode(String.valueOf(listaEstudiantes.get(1).getParticipacion()));
-        apellidosEstudiante2.appendChild(textParticipacionEstudiante2);
-
-        // Creamos el tercer nodo y lo colgamos de su padre, el nodo raíz. --> estudiantes
-        Element estudiante3 = document.createElement("estudiante");
-        estudiantes.appendChild(estudiante3);
-
-        Element nombreEstudiante3 = document.createElement("nombre");
-        estudiante3.appendChild(nombreEstudiante3);
-        Element apellidosEstudiante3 = document.createElement("participación");
-        estudiante3.appendChild(apellidosEstudiante3);
-
-        Text textNombreEstudiante3 = document.createTextNode(listaEstudiantes.get(2).getNombre());
-        nombreEstudiante3.appendChild(textNombreEstudiante3);
-        Text textParticipacionEstudiante3 = document.createTextNode(String.valueOf(listaEstudiantes.get(2).getParticipacion()));
-        apellidosEstudiante3.appendChild(textParticipacionEstudiante3);
+            Element participacionEstudiante = document.createElement("participacion");
+            estudianteElement.appendChild(participacionEstudiante);
+            Text textParticipacionEstudiante = document.createTextNode(String.valueOf(estudiante.getParticipacion()));
+            participacionEstudiante.appendChild(textParticipacionEstudiante);
 
 
-        // Clases necesarias para finalizar la creación del archivo XML
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        DOMSource source = new DOMSource(document);
-        StreamResult result = new StreamResult(new File(rutaParaExportar));
+            // Clases necesarias para finalizar la creación del archivo XML
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(new File(rutaParaExportar));
 
-        // Se realiza la transformación, de Document a Fichero.
-        transformer.transform(source, result);
+            // Se realiza la transformación, de Document a Fichero.
+            transformer.transform(source, result);
 
+
+        }
     }
-
 }

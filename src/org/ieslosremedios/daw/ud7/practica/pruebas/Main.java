@@ -9,8 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Main extends OperacionesApp {
-    public static void main(String[] args) throws IOException, ParserConfigurationException, TransformerException, SAXException {
+    public static void main(String[] args) throws IOException, ParserConfigurationException, TransformerException, SAXException, ClassNotFoundException {
         Estudiante JuanManuelH = new Estudiante("Juan Manuel Herrera Ramírez", 0),
                 DanielAlfonso = new Estudiante("Daniel Alfonso Rodríguez Santos", 0),
                 Jonathan = new Estudiante("Jonathan León Canto", 0);
@@ -20,10 +21,10 @@ public class Main extends OperacionesApp {
         listaEstudiantes.add(JuanManuelH);
         listaEstudiantes.add(Jonathan);
 
-        //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
-        //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/prueba.xml");
-        seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/pruebas.txt");
 
+        //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/ficheroImportado.xml");
+        //seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.txt");
 
     }
 

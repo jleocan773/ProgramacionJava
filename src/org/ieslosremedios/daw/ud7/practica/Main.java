@@ -1,12 +1,15 @@
 package org.ieslosremedios.daw.ud7.practica;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.*;
 import java.util.*;
 
-public class Main {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+public class Main extends  OperacionesApp{
+    public static void main(String[] args) throws IOException, ClassNotFoundException, ParserConfigurationException, TransformerException, SAXException {
         Estudiante Pablo = new Estudiante("Pablo Mateos Palas", 0),
                 JuanMaria = new Estudiante("Juan María Mateos Ponce", 0),
                 Victor = new Estudiante("Victor Chacón Calle", 0),
@@ -24,7 +27,6 @@ public class Main {
                 AntonioJesus = new Estudiante("Antonio Jesús Téllez Perdigones", 0);
 
 
-        final String ruta = "C:\\Users\\1DAW_2223_01\\Desktop\\Programación\\Unidad-7\\estudiantes.txt";
         List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
         listaEstudiantes.add(DanielAlfonso);
         listaEstudiantes.add(JuanManuelH);
@@ -32,66 +34,10 @@ public class Main {
         //System.out.println(listaEstudiantes);
 
         //Opciones para el menú:
-        //crearFicheroEstudiantes(listaEstudiantes, ruta);
-        //System.out.println(leerFicheroEstudiantes(ruta));
-        //System.out.println(seleccionarAleatorio(listaEstudiantes, ruta));
+        //exportarXML(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/alumnos.xml");
+        //importarXML("src/org/ieslosremedios/daw/ud7/practica/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/ficheroImportado.xml");
+        //seleccionarAleatorio(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/alumnos.txt");
+
+
     }
-
-
-    public static void crearFicheroEstudiantes(List<Estudiante> listaEstudiantes, String ruta) throws IOException {
-        FileOutputStream writeData = new FileOutputStream(ruta);
-        ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
-
-        writeStream.writeObject(listaEstudiantes);
-        writeStream.flush();
-        writeStream.close();
-    }
-
-    public static List<Estudiante> leerFicheroEstudiantes(String ruta) throws IOException, ClassNotFoundException {
-        FileInputStream readData = new FileInputStream(ruta);
-        ObjectInputStream readStream = new ObjectInputStream(readData);
-
-        ArrayList<Estudiante> estudiantes = (ArrayList<Estudiante>) readStream.readObject();
-        readStream.close();
-        return estudiantes;
-    }
-
-    public static Estudiante seleccionarAleatorio(List<Estudiante> estudiantes, String ruta) throws IOException, ClassNotFoundException {
-        estudiantes.clear();
-        estudiantes = leerFicheroEstudiantes(ruta);
-
-        Random random = new Random();
-        int elegido = random.nextInt(estudiantes.size());
-
-        //Aquí queda por cambiar el número 50 por la mayor participación que haya en la lista
-        //O sea, hay que recorrer la lista, guardar la participación del primer estudiante en una variable y compararla
-        //con el resto de valores de la participación del resto de estudiantes, cambiando el valor de la variable si se
-        //encuentra un valor mayor
-        if (estudiantes.get(elegido).getParticipacion() > 50) {
-            elegido = random.nextInt(estudiantes.size());
-            System.out.println("Se ha elegido a " + estudiantes.get(elegido) + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
-
-            FileOutputStream writeData = new FileOutputStream(ruta);
-            ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
-
-            writeStream.writeObject(estudiantes);
-            writeStream.flush();
-            writeStream.close();
-
-            return estudiantes.get(elegido);
-        }
-        else
-        System.out.println("Se ha elegido a " + estudiantes.get(elegido).nombre + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
-        FileOutputStream writeData = new FileOutputStream(ruta);
-        ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
-
-        writeStream.writeObject(estudiantes);
-        writeStream.flush();
-        writeStream.close();
-
-        return (estudiantes.get(elegido));
-    }
-
-
-
 }
