@@ -17,6 +17,8 @@ import static org.ieslosremedios.daw.ud7.practica.pruebas.ExportarXML.exportarXM
 
 public class SeleccionarAleatorio {
     public static Estudiante seleccionarAleatorio(List<Estudiante> estudiantes, String rutaParaEscribirFichero) throws ParserConfigurationException, TransformerException, JAXBException {
+
+
         Random random = new Random();
         int elegido = random.nextInt(estudiantes.size());
 
