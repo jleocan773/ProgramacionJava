@@ -14,11 +14,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import static org.ieslosremedios.daw.ud7.practica.pruebas.ExportarXML.exportarXML;
 import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_A_Lista.PasarXMLaLista;
 
 public class OperacionesApp {
@@ -125,6 +125,15 @@ public class OperacionesApp {
             }
             return listaestudiantes;
         }
+    }
+
+    public static void resetearParticipaciones(String rutaParaResetear) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+        List<Estudiante> listaEstudiantes = PasarXMLaLista(rutaParaResetear);
+        for (int i = 0; i < listaEstudiantes.size(); i++){
+            listaEstudiantes.get(i).setParticipacion(0);
+        }
+        exportarXML(listaEstudiantes,rutaParaResetear);
+        System.out.println("Se han reseteado las participaciones de los Alumnos");
     }
 
 

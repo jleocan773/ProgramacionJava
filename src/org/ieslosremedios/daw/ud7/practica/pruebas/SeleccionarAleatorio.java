@@ -6,11 +6,7 @@ import org.xml.sax.SAXException;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -18,8 +14,8 @@ import static org.ieslosremedios.daw.ud7.practica.pruebas.ExportarXML.exportarXM
 import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_A_Lista.PasarXMLaLista;
 
 public class SeleccionarAleatorio {
-    public static Estudiante seleccionarAleatorio(List<Estudiante> listaEstudiantes, String rutaParaEscribirFichero) throws ParserConfigurationException, TransformerException, JAXBException, IOException, SAXException {
-        listaEstudiantes = PasarXMLaLista(rutaParaEscribirFichero);
+    public static Estudiante seleccionarAleatorio(String rutaParaEscribirFichero) throws ParserConfigurationException, TransformerException, JAXBException, IOException, SAXException {
+        List<Estudiante> listaEstudiantes = PasarXMLaLista(rutaParaEscribirFichero);
 
         Random random = new Random();
         int elegido = random.nextInt(listaEstudiantes.size());

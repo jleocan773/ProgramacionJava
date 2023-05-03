@@ -10,8 +10,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.ieslosremedios.daw.ud7.practica.pruebas.ExportarXML.exportarXML;
-import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_A_Lista.PasarXMLaLista;
+import static org.ieslosremedios.daw.ud7.practica.pruebas.ResetearParticipaciones.resetearParticipaciones;
 import static org.ieslosremedios.daw.ud7.practica.pruebas.SeleccionarAleatorio.seleccionarAleatorio;
 
 public class Pruebas {
@@ -43,7 +42,8 @@ public class Pruebas {
 
         //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/ficheroImportado.xml");
-        seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        //seleccionarAleatorio("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        resetearParticipaciones("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //prueba = PasarXMLaLista("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //System.out.println(prueba);
     }
