@@ -1,8 +1,9 @@
 package org.ieslosremedios.daw.aaa_clases_universales;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.persistence.Entity;
 import java.io.Serializable;
 
+@Entity(name = "Persona")
 public class Persona implements Serializable {
     public String nombre;
     public String apellidos;
@@ -37,7 +38,6 @@ public class Persona implements Serializable {
 
     public Persona(){};
 
-    @XmlElement(name = "nombre")
     public String getNombre() {
         return nombre;
     }
