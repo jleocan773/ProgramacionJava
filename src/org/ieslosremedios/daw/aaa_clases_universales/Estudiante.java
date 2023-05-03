@@ -16,6 +16,10 @@ public class Estudiante extends Persona implements Serializable {
         this.participacion = participacion;
     }
 
+    public Estudiante() {
+
+    }
+
     public int getParticipacion() {
         return participacion;
     }

@@ -25,8 +25,7 @@ public class Main extends OperacionesApp {
 
         //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
         //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/ficheroImportado.xml");
-        //TODO Aquí lo que falla es que no lee cada vez que se ejecuta el archivo XML que ya existe, por lo que no se guarda la participación
-        //seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
 
     }
 

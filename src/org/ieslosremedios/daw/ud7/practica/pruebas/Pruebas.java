@@ -9,11 +9,9 @@ import javax.xml.transform.TransformerException;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import static org.ieslosremedios.daw.ud7.practica.pruebas.ExportarXML.exportarXML;
-import static org.ieslosremedios.daw.ud7.practica.pruebas.ImportarXML.importarXML;
-import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_Lista.PasarXMLaLista;
+import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_A_Lista.PasarXMLaLista;
 import static org.ieslosremedios.daw.ud7.practica.pruebas.SeleccionarAleatorio.seleccionarAleatorio;
 
 public class Pruebas {
@@ -41,12 +39,12 @@ public class Pruebas {
         listaEstudiantes.add(Jonathan);
         //System.out.println(listaEstudiantes);
 
-        List<Estudiante> prueba = new ArrayList<>();
+        List<Estudiante> prueba;
 
         //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/ficheroImportado.xml");
-        //seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
-        prueba = PasarXMLaLista("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
-        System.out.println(prueba);
+        seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        //prueba = PasarXMLaLista("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        //System.out.println(prueba);
     }
 }
