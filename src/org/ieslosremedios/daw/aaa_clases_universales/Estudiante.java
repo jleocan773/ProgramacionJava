@@ -1,5 +1,7 @@
 package org.ieslosremedios.daw.aaa_clases_universales;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 public class Estudiante extends Persona implements Serializable {
@@ -23,6 +25,7 @@ public class Estudiante extends Persona implements Serializable {
     public void setParticipacion(int participacion) {
         this.participacion = participacion;
     }
+
 
     @Override
     public String toString() {
