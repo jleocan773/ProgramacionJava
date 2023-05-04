@@ -3,6 +3,7 @@ package org.ieslosremedios.daw.aaa_clases_universales;
 import java.io.Serializable;
 import javax.persistence.*;
 
+
 @Entity (name = "Coche")
 public class Coche implements Serializable {
     //Para poner un campo como Clave Primaria usamos:
@@ -10,7 +11,7 @@ public class Coche implements Serializable {
     //Para poner el equivalente a AUTO_INCREMENT en MySQL
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "referenciaSEQ")
     //También podemos usar
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "referenciaSEQ")
+    @SequenceGenerator(allocationSize = 1, name = "referenciaSEQ")
     private Integer referencia;
     private String marca;
     private String color;

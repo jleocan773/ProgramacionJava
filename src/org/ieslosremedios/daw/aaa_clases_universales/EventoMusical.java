@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class EventoMusical implements Serializable {
 
     //Para crear un campo para Clave Primaria usamos @Id, para generar un patrón a seguir para la Base de Datos usamos:
@@ -14,7 +15,7 @@ public class EventoMusical implements Serializable {
     //@SequenceGenerator, en el que se especifica el valor inicial, cuanto se le añade cada vez y el nombre del generador
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "secuencia10en10")
-    @SequenceGenerator(initialValue = 10, allocationSize = 10, name = "secuencia10en10")
+    @SequenceGenerator(allocationSize = 1, name = "secuencia10en10")
     private Integer id;
 
     // Si no se desea que se almacenen tipos persistentes usamos @Transient
@@ -56,6 +57,38 @@ public class EventoMusical implements Serializable {
         this.recaudacion = recaudacion;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getControl() {
+        return control;
+    }
+
+    public void setControl(Integer control) {
+        this.control = control;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public List<Artista> getArtistasConfirmados() {
+        return artistasConfirmados;
+    }
+
+    public void setArtistasConfirmados(List<Artista> artistasConfirmados) {
+        this.artistasConfirmados = artistasConfirmados;
+    }
+
     public EventoMusical(String nombreEvento, Timestamp fecha, BigInteger recaudacion) {
         this.nombreEvento = nombreEvento;
         this.fecha = fecha;
@@ -67,6 +100,13 @@ public class EventoMusical implements Serializable {
 
     @Override
     public String toString() {
-        return "Nombre: " + getNombreEvento() + " | Fecha: " + getFecha() + " | Recaudación: " + getRecaudacion();
+        return "EventoMusical{" +
+                "id=" + id +
+                ", nombreEvento='" + nombreEvento + '\'' +
+                ", fecha=" + fecha +
+                ", recaudacion=" + recaudacion +
+                ", genero=" + genero +
+                ", artistasConfirmados=" + artistasConfirmados +
+                '}';
     }
 }
