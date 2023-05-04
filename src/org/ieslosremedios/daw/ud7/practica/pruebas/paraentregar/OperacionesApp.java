@@ -1,9 +1,7 @@
 package org.ieslosremedios.daw.ud7.practica.pruebas.paraentregar;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Text;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
@@ -16,9 +14,12 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+
+import static org.ieslosremedios.daw.ud7.practica.pruebas.ExportarXML.exportarXML;
+import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_A_Lista.PasarXMLaLista;
 
 public class OperacionesApp {
 
@@ -81,23 +82,59 @@ public class OperacionesApp {
 
     }
 
-    public static Estudiante seleccionarAleatorio(List<Estudiante> estudiantes, String rutaParaEscribirFichero) throws  ParserConfigurationException, TransformerException, JAXBException {
-        //TODO Aquí habría que cargar el XML y convertirlo en una Lista, y asignarle al valor a la Lista introducida por parámetros la de la cargada
-
+    public static Estudiante seleccionarAleatorio(List<Estudiante> listaEstudiantes, String rutaParaEscribirFichero) throws ParserConfigurationException, TransformerException, JAXBException, IOException, SAXException {
+        listaEstudiantes = PasarXMLaLista(rutaParaEscribirFichero);
         Random random = new Random();
-        int elegido = random.nextInt(estudiantes.size());
+        int elegido = random.nextInt(listaEstudiantes.size());
 
-        if (estudiantes.get(elegido).getParticipacion() > 50) {
-            elegido = random.nextInt(estudiantes.size());
-            estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
-            System.out.println("Se ha elegido a " + estudiantes.get(elegido).getNombre() + "ahora su participación es " + estudiantes.get(elegido).getParticipacion());
-            exportarXML(estudiantes, rutaParaEscribirFichero);
-            return estudiantes.get(elegido);
+        if (listaEstudiantes.get(elegido).getParticipacion() > 50) {
+            elegido = random.nextInt(listaEstudiantes.size());
+            listaEstudiantes.get(elegido).setParticipacion(listaEstudiantes.get(elegido).getParticipacion() + 1);
+            System.out.println("Se ha elegido a " + listaEstudiantes.get(elegido).getNombre() + "ahora su participación es " + listaEstudiantes.get(elegido).getParticipacion());
+            exportarXML(listaEstudiantes, rutaParaEscribirFichero);
+            return listaEstudiantes.get(elegido);
         }
         else
-            estudiantes.get(elegido).setParticipacion(estudiantes.get(elegido).getParticipacion() + 1);
-            System.out.println("Se ha elegido a " + estudiantes.get(elegido).getNombre() + " ahora su participación es " + estudiantes.get(elegido).getParticipacion());
-            exportarXML(estudiantes, rutaParaEscribirFichero);
-        return (estudiantes.get(elegido));
+            listaEstudiantes.get(elegido).setParticipacion(listaEstudiantes.get(elegido).getParticipacion() + 1);
+            System.out.println("Se ha elegido a " + listaEstudiantes.get(elegido).getNombre() + " ahora su participación es " + listaEstudiantes.get(elegido).getParticipacion());
+            exportarXML(listaEstudiantes, rutaParaEscribirFichero);
+        return (listaEstudiantes.get(elegido));
     }
+
+    public class PasarXML_A_Lista {
+        public static List<Estudiante> PasarXMLaLista(String rutaXML) throws ParserConfigurationException, IOException, SAXException {
+            List<Estudiante> listaestudiantes = new LinkedList<>();
+            File file = new File(rutaXML);
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document document = builder.parse(file);
+
+            NodeList estudiantes = document.getElementsByTagName("estudiante");
+
+            for (int i = 0; i < estudiantes.getLength(); i++) {
+                Node node = estudiantes.item(i);
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+
+                    Element eElement = (Element) node;
+                    Estudiante estudiante = new Estudiante();
+                    estudiante.setNombre(eElement.getElementsByTagName("nombre").item(0).getTextContent());
+                    estudiante.setParticipacion(Integer.parseInt(eElement.getElementsByTagName("participacion").item(0).getTextContent()));
+
+                    listaestudiantes.add(estudiante);
+                }
+            }
+            return listaestudiantes;
+        }
+    }
+
+    public static void resetearParticipaciones(String rutaParaResetear) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+        List<Estudiante> listaEstudiantes = PasarXMLaLista(rutaParaResetear);
+        for (int i = 0; i < listaEstudiantes.size(); i++){
+            listaEstudiantes.get(i).setParticipacion(0);
+        }
+        exportarXML(listaEstudiantes,rutaParaResetear);
+        System.out.println("Se han reseteado las participaciones de los Alumnos");
+    }
+
+
 }

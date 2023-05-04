@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.ieslosremedios.daw.ud7.practica.pruebas.ResetearParticipaciones.resetearParticipaciones;
+
 
 public class Main extends OperacionesApp {
     public static void main(String[] args) throws IOException, ParserConfigurationException, TransformerException, SAXException, ClassNotFoundException, JAXBException {
@@ -25,8 +27,8 @@ public class Main extends OperacionesApp {
 
         //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
         //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/ficheroImportado.xml");
-        //TODO Aquí lo que falla es que no lee cada vez que se ejecuta el archivo XML que ya existe, por lo que no se guarda la participación
-        //seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        //seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
+        //resetearParticipaciones("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
 
     }
 
