@@ -1,14 +1,19 @@
 package org.ieslosremedios.daw.aaa_clases_universales;
 
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 import java.io.Serializable;
 
 @Entity(name = "Persona")
 public class Persona implements Serializable {
     public String nombre;
+    @Transient
     public String apellidos;
+    @Transient
     public int edad;
+    @Transient
     public Persona padre;
+    @Transient
     public Direccion direccion;
 
 
