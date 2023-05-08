@@ -39,7 +39,7 @@ public class Ejemplo1_ConexionYTransaccion {
         //La clave principal empieza en 3 por alguna razón
         Coche prueba = em.find(Coche.class, 4);
         System.out.println(prueba.getColor());
-
+//
 //        TypedQuery<Coche> query1 = em.createQuery("SELECT c FROM Coche c WHERE color like ?1", Coche.class);
 //        query1.setParameter("color", "Amarillo");
 //        Coche prueba2 = query1.getSingleResult();
