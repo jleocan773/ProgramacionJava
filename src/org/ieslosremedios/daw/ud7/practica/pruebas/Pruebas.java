@@ -40,7 +40,7 @@ public class Pruebas {
 
         List<Estudiante> prueba;
 
-        //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/ficheroImportado.xml");
         //seleccionarAleatorio("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //System.out.println(seleccionarAlumnoMenosParticipativo("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml"));

@@ -17,6 +17,7 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_A_Lista.pasarXMLaLista;
 
@@ -161,6 +162,4 @@ public class OperacionesApp {
         importarXML(listaEstudiantes,rutaParaResetear);
         System.out.println("Se han reseteado las participaciones de los Alumnos");
     }
-
-
 }

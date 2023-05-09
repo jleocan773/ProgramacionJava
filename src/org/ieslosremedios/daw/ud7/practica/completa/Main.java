@@ -9,6 +9,7 @@ import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main extends OperacionesApp {
@@ -46,13 +47,57 @@ public class Main extends OperacionesApp {
         listaEstudiantes.add(JoseAntonio);
         listaEstudiantes.add(AntonioJesus);
 
-        //importarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
-        //exportarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/ficheroExportado.xml");
-        //System.out.println(seleccionarAlumnoMenosParticipativo("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml"));
-        //resetearParticipaciones("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
+        //importarXML(listaEstudiantes,"C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml");
+        //exportarXML("C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml", "C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml");
+        //System.out.println(seleccionarAlumnoMenosParticipativo("C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml"));
+        //resetearParticipaciones("C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml");
+
+            //Boolean para ejecución
+            boolean exit = false;
+            // Declaramos variable Scanner, que la que usaremos para introducir parametros por pantalla
+            Scanner scan=new Scanner(System.in);
+
+            while (!exit) {
+                System.out.println("\nMENU:\n");
+                System.out.println("1. Importar archivo XML");
+                System.out.println("2. Exportar archivo XML");
+                System.out.println("3. Seleccionar alumno menos participativo");
+                System.out.println("4. Resetear participaciones");
+                System.out.println("5. Salir");
+                System.out.print("Introduce una opcion (1-5): ");
+                int opcion = scan.nextInt();
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Introduce la ruta del archivo XML a importar: ");
+                        String rutaImportar = scan.next();
+                        importarXML(listaEstudiantes,rutaImportar);
+                        break;
+                    case 2:
+                        System.out.println("Introduce la ruta del archivo XML a exportar: ");
+                        String rutaLectura = scan.next();
+                        System.out.println("Introduce la ruta donde quieres guardar el archivo exportado: ");
+                        String rutaEscritura = scan.next();
+                        exportarXML(rutaLectura, rutaEscritura);
+                        break;
+                    case 3:
+                        System.out.println("Introduce la ruta del archivo XML de alumnos: ");
+                        String rutaAlumnos = scan.next();
+                        System.out.println(seleccionarAlumnoMenosParticipativo(rutaAlumnos));
+                        break;
+                    case 4:
+                        System.out.println("Introduce la ruta del archivo XML a resetear: ");
+                        String rutaReset = scan.next();
+                        resetearParticipaciones(rutaReset);
+                        break;
+                    case 5:
+                        exit = true;
+                        System.out.println("Gracias por confiar en Remedy Softworks");
+                        break;
+                    default:
+                        System.out.println("Opción no valida");
+                }
+            }
 
     }
-
-
-
 }
+
