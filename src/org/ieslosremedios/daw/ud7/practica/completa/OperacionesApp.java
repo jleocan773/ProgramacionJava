@@ -1,4 +1,4 @@
-package org.ieslosremedios.daw.ud7.practica.pruebas.paraentregar;
+package org.ieslosremedios.daw.ud7.practica.completa;
 
 import org.ieslosremedios.daw.aaa_clases_universales.Estudiante;
 import org.w3c.dom.*;
