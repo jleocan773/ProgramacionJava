@@ -15,19 +15,42 @@ import static org.ieslosremedios.daw.ud7.practica.pruebas.ResetearParticipacione
 
 public class Main extends OperacionesApp {
     public static void main(String[] args) throws IOException, ParserConfigurationException, TransformerException, SAXException, ClassNotFoundException, JAXBException {
-        Estudiante JuanManuelH = new Estudiante("Juan Manuel Herrera Ramírez", 0),
-                DanielAlfonso = new Estudiante("Daniel Alfonso Rodríguez Santos", 0),
-                Jonathan = new Estudiante("Jonathan León Canto", 0);
+
+        //Creamos todos los alumnos de la clase
+        Estudiante Pablo = new Estudiante("Pablo Mateos Palas", 5),
+                JuanMaria = new Estudiante("Juan María Mateos Ponce", 0),
+                Victor = new Estudiante("Victor Chacón Calle", 0),
+                Jorge = new Estudiante("Jorge Coronil Villalba", 9),
+                Ricardo = new Estudiante("Ricardo Gabriel Moreno Cantea", 4),
+                Adrian = new Estudiante("Adrián Merino Gamaza", 4),
+                JuanManuelH = new Estudiante("Juan Manuel Herrera Ramírez", 4),
+                DanielAlfonso = new Estudiante("Daniel Alfonso Rodríguez Santos", 5),
+                Diego = new Estudiante("Diego González Romero", 2),
+                Jonathan = new Estudiante("Jonathan León Canto", 5),
+                JuanManuelS = new Estudiante("Juan Manuel Saborido Baena", -1),
+                Julian = new Estudiante("Julian García Velázquez", 1),
+                JoseAntonio = new Estudiante("Jose Antonio Jaén Gómez", 0),
+                AntonioJesus = new Estudiante("Antonio Jesús Téllez Perdigones", 2);
 
         List<Estudiante> listaEstudiantes = new ArrayList<>();
-        listaEstudiantes.add(DanielAlfonso);
+        listaEstudiantes.add(Pablo);
+        listaEstudiantes.add(JuanMaria);
+        listaEstudiantes.add(Victor);
+        listaEstudiantes.add(Jorge);
+        listaEstudiantes.add(Ricardo);
+        listaEstudiantes.add(Adrian);
         listaEstudiantes.add(JuanManuelH);
+        listaEstudiantes.add(DanielAlfonso);
+        listaEstudiantes.add(Diego);
         listaEstudiantes.add(Jonathan);
+        listaEstudiantes.add(JuanManuelS);
+        listaEstudiantes.add(Julian);
+        listaEstudiantes.add(JoseAntonio);
+        listaEstudiantes.add(AntonioJesus);
 
-
-        //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
-        //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/ficheroImportado.xml");
-        //seleccionarAleatorio(listaEstudiantes, "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
+        //importarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
+        //exportarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/ficheroExportado.xml");
+        //System.out.println(seleccionarAlumnoMenosParticipativo("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml"));
         //resetearParticipaciones("src/org/ieslosremedios/daw/ud7/practica/pruebas/paraentregar/alumnos.xml");
 
     }

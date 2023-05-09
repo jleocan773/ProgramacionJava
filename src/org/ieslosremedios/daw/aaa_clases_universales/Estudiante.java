@@ -75,8 +75,12 @@ public class Estudiante extends Persona implements Serializable {
         this.ordenadorAsignado = ordenadorAsignado;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Nombre: " + getNombre() + " | Participación: " + getParticipacion() + " | Grupo: " + getGrupo() + " | Ordenador: " + getOrdenadorAsignado();
+//    }
     @Override
     public String toString() {
-        return "Nombre: " + getNombre() + " | Participación: " + getParticipacion() + " | Grupo: " + getGrupo() + " | Ordenador: " + getOrdenadorAsignado();
+        return "Nombre: " + getNombre() + " | Participación: " + getParticipacion();
     }
 }
