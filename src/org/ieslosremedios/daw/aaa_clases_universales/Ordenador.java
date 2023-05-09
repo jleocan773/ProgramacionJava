@@ -5,7 +5,7 @@ import com.objectdb.o.BGT;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 @Entity
 public class Ordenador implements Serializable {
@@ -36,9 +36,6 @@ public class Ordenador implements Serializable {
         this.discoDuro = discoDuro;
         this.cpu = cpu;
         this.fechaCompra = fechaCompra;
-    }
-
-    public Ordenador(String ip, String abc123, BigInteger memoria, BigInteger discoDuro, String amd, java.sql.Timestamp valueOf) {
     }
 
     public Integer getId() {
@@ -95,5 +92,18 @@ public class Ordenador implements Serializable {
 
     public void setFechaCompra(Timestamp fechaCompra) {
         this.fechaCompra = fechaCompra;
+    }
+
+    @Override
+    public String toString() {
+        return "Ordenador{" +
+                "id=" + id +
+                ", IP='" + IP + '\'' +
+                ", numSerie='" + numSerie + '\'' +
+                ", memoria=" + memoria +
+                ", discoDuro=" + discoDuro +
+                ", cpu='" + cpu + '\'' +
+                ", fechaCompra=" + fechaCompra +
+                '}';
     }
 }

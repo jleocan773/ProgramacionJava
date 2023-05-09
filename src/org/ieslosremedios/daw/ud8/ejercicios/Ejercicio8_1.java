@@ -45,7 +45,7 @@ public class Ejercicio8_1 {
 
 //      Selecciona todos los alumnos que no tengan ordenador (porque utilizan el suyo propio)
         System.out.println("Selecciona todos los alumnos que no tengan ordenador (porque utilizan el suyo propio)");
-        Query alumnosSinOrdenador = em.createNativeQuery("SELECT * FROM Estudiante WHERE ordenadorAsignado NOT IN (SELECT ordenadorAsignado FROM Estudiante)");
+        TypedQuery<Estudiante> alumnosSinOrdenador = em.createQuery("SELECT e FROM Estudiante e WHERE ordenadorAsignado.id IS NULL", Estudiante.class);
         List<Estudiante> listaAlumnosSinOrdenador = alumnosSinOrdenador.getResultList();
         System.out.println(listaAlumnosSinOrdenador);
 
