@@ -10,8 +10,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.ieslosremedios.daw.ud7.practica.pruebas.ResetearParticipaciones.resetearParticipaciones;
-import static org.ieslosremedios.daw.ud7.practica.pruebas.SeleccionarAleatorio.seleccionarAleatorio;
+import static org.ieslosremedios.daw.ud7.practica.pruebas.ExportarXML.exportarXML;
+import static org.ieslosremedios.daw.ud7.practica.pruebas.SeleccionarEstudianteMenosParticipativo.seleccionarAlumnoMenosParticipativo;
 
 public class Pruebas {
     public static void main(String[] args) throws IOException, ClassNotFoundException, ParserConfigurationException, TransformerException, SAXException, JAXBException {
@@ -22,10 +22,10 @@ public class Pruebas {
                 Jorge = new Estudiante("Jorge Coronil Villalba", 0),
                 Ricardo = new Estudiante("Ricardo Gabriel Moreno Cantea", 0),
                 Adrian = new Estudiante("Adrián Merino Gamaza", 0),
-                JuanManuelH = new Estudiante("Juan Manuel Herrera Ramírez", 0),
-                DanielAlfonso = new Estudiante("Daniel Alfonso Rodríguez Santos", 0),
+                JuanManuelH = new Estudiante("Juan Manuel Herrera Ramírez", 50),
+                DanielAlfonso = new Estudiante("Daniel Alfonso Rodríguez Santos", 100),
                 Diego = new Estudiante("Diego González Romero", 0),
-                Jonathan = new Estudiante("Jonathan León Canto", 0),
+                Jonathan = new Estudiante("Jonathan León Canto", 150),
                 JuanManuelS = new Estudiante("Juan Manuel Saborido Baena", 0),
                 Julian = new Estudiante("Julian García Velázquez", 0),
                 JoseAntonio = new Estudiante("Jose Antonio Jaén Gómez", 0),
@@ -43,7 +43,8 @@ public class Pruebas {
         //exportarXML(listaEstudiantes,"src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //importarXML("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml", "src/org/ieslosremedios/daw/ud7/practica/pruebas/ficheroImportado.xml");
         //seleccionarAleatorio("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
-        resetearParticipaciones("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
+        //System.out.println(seleccionarAlumnoMenosParticipativo("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml"));
+        //resetearParticipaciones("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //prueba = PasarXMLaLista("src/org/ieslosremedios/daw/ud7/practica/pruebas/alumnos.xml");
         //System.out.println(prueba);
     }

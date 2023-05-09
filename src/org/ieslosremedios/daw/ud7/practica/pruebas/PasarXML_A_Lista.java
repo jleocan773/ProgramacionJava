@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PasarXML_A_Lista {
-    public static List<Estudiante> PasarXMLaLista(String rutaXML) throws ParserConfigurationException, IOException, SAXException {
+    public static List<Estudiante> pasarXMLaLista(String rutaXML) throws ParserConfigurationException, IOException, SAXException {
         List<Estudiante> listaestudiantes = new LinkedList<>();
         File file = new File(rutaXML);
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

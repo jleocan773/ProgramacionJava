@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Random;
 
 import static org.ieslosremedios.daw.ud7.practica.pruebas.ExportarXML.exportarXML;
-import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_A_Lista.PasarXMLaLista;
+import static org.ieslosremedios.daw.ud7.practica.pruebas.PasarXML_A_Lista.pasarXMLaLista;
 
 public class SeleccionarAleatorio {
     public static Estudiante seleccionarAleatorio(String rutaParaEscribirFichero) throws ParserConfigurationException, TransformerException, JAXBException, IOException, SAXException {
-        List<Estudiante> listaEstudiantes = PasarXMLaLista(rutaParaEscribirFichero);
+        List<Estudiante> listaEstudiantes = pasarXMLaLista(rutaParaEscribirFichero);
 
         Random random = new Random();
         int elegido = random.nextInt(listaEstudiantes.size());
@@ -23,7 +23,7 @@ public class SeleccionarAleatorio {
         if (listaEstudiantes.get(elegido).getParticipacion() > 50) {
             elegido = random.nextInt(listaEstudiantes.size());
             listaEstudiantes.get(elegido).setParticipacion(listaEstudiantes.get(elegido).getParticipacion() + 1);
-            System.out.println("Se ha elegido a " + listaEstudiantes.get(elegido).getNombre() + "ahora su participación es " + listaEstudiantes.get(elegido).getParticipacion());
+            System.out.println("Se ha elegido a " + listaEstudiantes.get(elegido).getNombre() + " ahora su participación es " + listaEstudiantes.get(elegido).getParticipacion());
             exportarXML(listaEstudiantes, rutaParaEscribirFichero);
             return listaEstudiantes.get(elegido);
         }
