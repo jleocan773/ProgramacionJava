@@ -130,7 +130,7 @@ public class OperacionesApp {
                 estudianteMenosParticipativo = listaEstudiantes.get(i);
             }
         }
-        //Aumenta la participación del alumno elegido en uno
+        //Aumenta la participación del alumno que se ha elegido en uno
         estudianteMenosParticipativo.setParticipacion(estudianteMenosParticipativo.getParticipacion() + 1);
         //Para guardar los cambios en el XML se importa el archivo
         importarXML(listaEstudiantes, rutaXML);

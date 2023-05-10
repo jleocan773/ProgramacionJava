@@ -58,7 +58,7 @@ public class Main extends OperacionesApp {
             Scanner scan=new Scanner(System.in);
 
             while (!exit) {
-                System.out.println("\nMENU:\n");
+                System.out.println("MENU:");
                 System.out.println("1. Importar archivo XML");
                 System.out.println("2. Exportar archivo XML");
                 System.out.println("3. Seleccionar alumno menos participativo");
