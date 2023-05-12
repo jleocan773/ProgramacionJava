@@ -25,6 +25,8 @@ public class Ordenador implements Serializable {
     private String cpu;
     @Embedded
     private Timestamp fechaCompra;
+    @Embedded
+    private Boolean activado;
 
     public Ordenador() {
     }
@@ -36,6 +38,16 @@ public class Ordenador implements Serializable {
         this.discoDuro = discoDuro;
         this.cpu = cpu;
         this.fechaCompra = fechaCompra;
+    }
+
+    public Ordenador(String IP, String numSerie, BigInteger memoria, BigInteger discoDuro, String cpu, Timestamp fechaCompra, Boolean activado) {
+        this.IP = IP;
+        this.numSerie = numSerie;
+        this.memoria = memoria;
+        this.discoDuro = discoDuro;
+        this.cpu = cpu;
+        this.fechaCompra = fechaCompra;
+        this.activado = activado;
     }
 
     public Integer getId() {

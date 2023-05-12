@@ -81,7 +81,7 @@ public class OperacionesApp {
 
 
     //Este método exporta un archivo XML de una ruta indicada
-    //Como parámetro a una ruta dónde queremos realizar una copia indicada como parámetro
+    //Como parámetro acepta un String con la ruta desde dónde hará la copia y otro String con dónde escribir esa copia
     public static void exportarXML(String rutaLectura, String rutaEscritura) {
         try {
             //Cargamos fichero que vamos a leer
@@ -187,15 +187,16 @@ public class OperacionesApp {
 
     //Este método pone a 0 las participaciones de todos los alumnos en un archivo XML
     //Como parámetro recibe la ruta del archivo XMl del que se desea poner las participaciones a 0
-    public static void resetearParticipaciones(String rutaParaResetear) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+    public static void resetearParticipaciones(String rutaParaResetear) {
         //Crea la lista a partir del XML con el método anterior
-        List<Estudiante> listaEstudiantes = pasarXMLaLista(rutaParaResetear);
-        //Con un bucle vamos poniendo la participación de cada alumno a 0
-        for (int i = 0; i < listaEstudiantes.size(); i++){
-            listaEstudiantes.get(i).setParticipacion(0);
-        }
-        //Y finalmente se importa el archivo, así acabamos con el mismo XML pero con todas las participaciones en 0
-        importarXML(listaEstudiantes,rutaParaResetear);
-        System.out.println("Se han reseteado las participaciones de los Alumnos");
+            List<Estudiante> listaEstudiantes = null;
+            listaEstudiantes = pasarXML_A_Lista(rutaParaResetear);
+            //Con un bucle vamos poniendo la participación de cada alumno a 0
+            for (int i = 0; i < listaEstudiantes.size(); i++){
+                listaEstudiantes.get(i).setParticipacion(0);
+            }
+            //Y finalmente se importa el archivo, así acabamos con el mismo XML pero con todas las participaciones en 0
+            importarXML(listaEstudiantes,rutaParaResetear);
+            System.out.println("Se han reseteado las participaciones de los Alumnos");
     }
 }

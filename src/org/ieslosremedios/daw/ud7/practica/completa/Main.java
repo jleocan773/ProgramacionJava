@@ -47,11 +47,6 @@ public class Main extends OperacionesApp {
         listaEstudiantes.add(JoseAntonio);
         listaEstudiantes.add(AntonioJesus);
 
-        //importarXML(listaEstudiantes,"C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml");
-        //exportarXML("C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml", "C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml");
-        //System.out.println(seleccionarAlumnoMenosParticipativo("C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml"));
-        //resetearParticipaciones("C:\\Users\\LionPride\\IdeaProjects\\ProgramacionJava\\src\\org\\ieslosremedios\\daw\\ud7\\practica\\completa\\alumnos.xml");
-
             //Boolean para ejecución
             boolean exit = false;
             // Declaramos variable Scanner, que la que usaremos para introducir parametros por pantalla

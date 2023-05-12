@@ -11,15 +11,23 @@ public class Conexion {
             Class.forName("org.mariadb.jdbc.Driver");
 
             Connection connection = DriverManager.getConnection(url, "jonathanleon", "jonathanleon");
+            System.out.println("Conexión Exitosa");
             Statement statement =  connection.createStatement();
+
             //TODO Aquí se hacen las consultas
 
+//            String query = "SELECT * FROM productos";
+//            ResultSet resultados = statement.executeQuery(query);
+//            System.out.println("listado de todos los productos");
+//            while(resultados.next()){
+//                System.out.println("Producto: " + resultados.getString("nombre"));
+//            }
 
             statement.close();
             connection.close();
 
         } catch (SQLException  | ClassNotFoundException e) {
-            System.err.println("Ha fallado la conexión" + e.getMessage());
+            System.err.println("No se pudo conectar" + e.getMessage());
         }
 
     }
