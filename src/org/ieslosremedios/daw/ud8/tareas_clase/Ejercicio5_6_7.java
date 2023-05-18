@@ -6,10 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
-import java.math.BigInteger;
-import java.sql.Timestamp;
 
-public class Ejercicio567 {
+public class Ejercicio5_6_7 {
     public static void main(String[] args) {
         //Con esto abrimos la conexión
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("C:\\Users\\1DAW_2223_01\\Desktop\\objectdb-2.8.8\\db\\evento.odb");
