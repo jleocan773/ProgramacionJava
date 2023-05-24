@@ -1,8 +1,8 @@
-package org.ieslosremedios.daw.ud9.tareas_clase;
+package org.ieslosremedios.daw.ud9.ejercicios;
 
 import java.awt.*;
 
-public class Login {
+public class Ejercicio9_1_Login {
     public static void main(String[] args) {
         Frame frame = new Frame("Login");
         frame.setBackground(Color.lightGray);
