@@ -9,11 +9,12 @@ import javax.persistence.TypedQuery;
 
 public class Ejercicio5_6_7 {
     public static void main(String[] args) {
-        //Con esto abrimos la conexión
+
+//      Con esto abrimos la conexión
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("C:\\Users\\1DAW_2223_01\\Desktop\\objectdb-2.8.8\\db\\evento.odb");
         EntityManager em = emf.createEntityManager();
 
-//        Iniciar Transacción
+//      Iniciar Transacción
         em.getTransaction().begin();
 
 //      EventoMusical eventoMusicalParaEjercicio5_numero1 = new EventoMusical("Evento EJ5 1", Timestamp.valueOf("2023-05-30 00:00:00"), new BigInteger("4000"));

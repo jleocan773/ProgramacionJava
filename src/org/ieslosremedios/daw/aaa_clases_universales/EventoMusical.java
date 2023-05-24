@@ -15,7 +15,7 @@ public class EventoMusical implements Serializable {
     //@SequenceGenerator, en el que se especifica el valor inicial, cuanto se le añade cada vez y el nombre del generador
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "secuencia10en10")
-    @SequenceGenerator(allocationSize = 1, name = "secuencia10en10")
+    @SequenceGenerator(allocationSize = 1, name = "secuencia1en1")
     private Integer id;
 
     // Si no se desea que se almacenen tipos persistentes usamos @Transient

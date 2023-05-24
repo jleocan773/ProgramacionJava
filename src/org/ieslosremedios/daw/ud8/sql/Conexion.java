@@ -16,12 +16,6 @@ public class Conexion {
 
             //TODO Aquí se hacen las consultas
 
-//            String query = "SELECT * FROM productos";
-//            ResultSet resultados = statement.executeQuery(query);
-//            System.out.println("listado de todos los productos");
-//            while(resultados.next()){
-//                System.out.println("Producto: " + resultados.getString("nombre"));
-//            }
 
             statement.close();
             connection.close();
