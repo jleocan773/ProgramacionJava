@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<estudiantes>
+    <estudiante>
+        <nombre>Pablo Mateos Palas</nombre>
+        <participacion>1</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Juan María Mateos Ponce</nombre>
+        <participacion>2</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Victor Chacón Calle</nombre>
+        <participacion>3</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Jorge Coronil Villalba</nombre>
+        <participacion>4</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Ricardo Gabriel Moreno Cantea</nombre>
+        <participacion>5</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Adrián Merino Gamaza</nombre>
+        <participacion>6</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Juan Manuel Herrera Ramírez</nombre>
+        <participacion>7</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Daniel Alfonso Rodríguez Santos</nombre>
+        <participacion>8</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Diego González Romero</nombre>
+        <participacion>9</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Jonathan León Canto</nombre>
+        <participacion>10</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Juan Manuel Saborido Baena</nombre>
+        <participacion>11</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Julian García Velázquez</nombre>
+        <participacion>12</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Jose Antonio Jaén Gómez</nombre>
+        <participacion>13</participacion>
+    </estudiante>
+    <estudiante>
+        <nombre>Antonio Jesús Téllez Perdigones</nombre>
+        <participacion>14</participacion>
+    </estudiante>
+</estudiantes>
